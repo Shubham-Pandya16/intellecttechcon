@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 
+import kohaLogo from '../../assets/Koha.jpg'
 import CTABanner from '../components/CTABanner'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
@@ -39,6 +40,7 @@ export default function SolutionDetail() {
   }
 
   const Icon = solution.icon
+  const isLibraryManagementSystem = solution.slug === 'library-management-system'
 
   return (
     <div className="pt-[112px]">
@@ -64,7 +66,11 @@ export default function SolutionDetail() {
         heroGraphic={
           <div className="mx-auto flex h-[220px] w-[220px] items-center justify-center rounded-[40px] bg-[#EEF3FB] shadow-soft">
             <div className="flex h-24 w-24 items-center justify-center rounded-[28px] bg-white">
-              <Icon className="h-12 w-12 text-primary" strokeWidth={1.5} />
+              {isLibraryManagementSystem ? (
+                <img src={kohaLogo} alt="Koha logo" className="h-16 w-auto object-contain" />
+              ) : (
+                <Icon className="h-12 w-12 text-primary" strokeWidth={1.5} />
+              )}
             </div>
           </div>
         }
