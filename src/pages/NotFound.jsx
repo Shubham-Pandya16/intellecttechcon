@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
 
+import Seo from '../components/Seo'
+
 export default function NotFound() {
   return (
-    <div className="pt-[120px]">
+    <div className="pt-[132px]">
+      <Seo title="Page Not Found" description="The page you requested does not exist." />
       <div className="mx-auto max-w-3xl px-4 text-center md:px-8">
-        <p className="text-sm uppercase tracking-[0.24em] text-accent">Page not found</p>
-        <h1 className="mt-4 text-4xl font-semibold text-text">Oops. The page you are looking for does not exist.</h1>
-        <p className="mt-5 text-sm leading-7 text-muted">
-          Return to the homepage or explore our solutions for academic, government, and corporate needs.
+        <p className="section-label">Page not found</p>
+        <h1 className="display-title mt-4 text-text">The page you are looking for does not exist.</h1>
+        <p className="body-copy mt-5">
+          Return to the homepage or explore our technology and content solutions for academic, government, and corporate organisations worldwide.
         </p>
-        <Link
-          to="/"
-          className="mt-8 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#264880]"
-        >
+        <Link to="/" className="btn-primary mt-8">
           Go Home
         </Link>
       </div>

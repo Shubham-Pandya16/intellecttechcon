@@ -1,17 +1,14 @@
 import {
-  Activity,
-  Award,
-  BookOpen,
-  BookOpenCheck,
-  CreditCard,
-  Cpu,
-  Database,
-  FileText,
-  Layout,
-  Monitor,
-  ShieldCheck,
-  Sparkles,
   Accessibility,
+  BadgeCheck,
+  BookOpen,
+  ClipboardList,
+  Compass,
+  Database,
+  Library,
+  PenLine,
+  ShieldCheck,
+  Wifi,
 } from 'lucide-react'
 
 export const solutions = [
@@ -19,536 +16,288 @@ export const solutions = [
     slug: 'online-assessment-system',
     name: 'Online Assessment System',
     category: 'Assessment',
-    icon: Monitor,
-    shortDescription: 'AI-driven exam platform for objective, subjective, and viva assessments.',
-    description:
-      'A secure platform for creating, delivering, and analysing assessments across academic, government, and corporate environments.',
-    details: [
-      'Design exams with objective, subjective, and viva workflows while preserving audit trails.',
-      'Automated analytics and reporting help institutions identify performance gaps and improve outcomes.',
-      'Role-based access and emphasis on compliance delivers confidence for large-scale programs.',
+    icon: ClipboardList,
+    metaDescription:
+      'AI Driven Online Exam Platform to automate objective, subjective assessments powered with intelligent proctoring and analytics.',
+    shortDescription:
+      'AI driven online exam platform for objective, subjective, and viva-based assessments.',
+    heroDescription:
+      'AI Driven Online Exam Platform to automate objective, subjective assessments powered with intelligent proctoring and analytics.',
+    overview: [
+      'AI Driven Online Exam Platform to automate objective, subjective assessments powered with intelligent proctoring and analytics. The platform is useful to conduct exams where the candidate is supposed to type answers for theory-based questions. Our platform supports theory-based exams with an answer-checking facility available for the examiner.',
+      'Define the Viva exam online - candidates can use their mobile and microphone to appear for the online exam. Question text associated with the viva is displayed on screen where the candidate can speak their answer. The entire speech is recorded in the system. The examiner is provided a login to listen to the audio and evaluate or assign marks for each individual answer attempted by the candidate.',
     ],
-    keyHighlights: [
-      'Multi-format assessments',
-      'Real-time analytics dashboard',
-      'Secure role-based delivery',
+    highlights: ['AI-driven assessment delivery', 'Theory-based answer evaluation', 'Online viva with recorded responses'],
+    featureSectionTitle: 'Use Cases / Exam Types',
+    featureItems: [
+      'Aptitude Test',
+      'Certification Test',
+      'Academic Exams',
+      'Hiring Assessment',
+      'Competitive Exam / Custom Test',
+      'Psychometric Test',
     ],
-    features: [
-      {
-        icon: Cpu,
-        title: 'Smart exam creation',
-        description: 'Build adaptive question banks with rich content, multimedia support, and timed sections.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Secure delivery',
-        description: 'Protect assessments with identity verification, browser lockdown, and encryption.',
-      },
-      {
-        icon: Activity,
-        title: 'AI-assisted analytics',
-        description: 'Measure performance across cohorts with actionable reports and trend visualisations.',
-      },
-      {
-        icon: FileText,
-        title: 'Holistic grading',
-        description: 'Combine objective, subjective, and viva scores in one configurable grading workflow.',
-      },
-      {
-        icon: Layout,
-        title: 'Flexible scheduling',
-        description: 'Run live exams, on-demand assessments, and batch sessions for any learner group.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Accessibility-ready',
-        description: 'Designed for inclusive delivery with assistive-mode support and device independence.',
-      },
+    secondarySectionTitle: 'Key Capabilities',
+    secondaryItems: [
+      'Automates objective and subjective assessments with intelligent proctoring and analytics.',
+      'Supports theory-based exams where candidates type answers and examiners can review them efficiently.',
+      'Enables online viva exams where question text is shown on screen and spoken answers are recorded in the system.',
+      'Allows examiners to listen to recorded responses and assign marks for each attempted answer.',
     ],
-    benefits: [
-      {
-        title: 'Faster exam cycles',
-        description: 'Reduce preparation and evaluation time with streamlined workflows and automation.',
-      },
-      {
-        title: 'Better decision-making',
-        description: 'Use data-driven insights to continuously refine learning and assessment strategies.',
-      },
-      {
-        title: 'Scalable delivery',
-        description: 'Run assessments for small classes or large institutions with reliability and speed.',
-      },
-    ],
-    whoItFor: ['Academic institutions', 'Government bodies', 'Corporate training teams'],
+    audience: ['Academic institutions', 'Government bodies', 'Corporate organisations'],
     related: ['proctoring-solution', 'onscreen-marking-solution', 'library-management-system'],
   },
   {
     slug: 'proctoring-solution',
     name: 'Proctoring Solution',
-    category: 'Security',
+    category: 'Assessment Security',
     icon: ShieldCheck,
-    shortDescription: 'AI-based remote invigilation with face detection and browser lockdown.',
-    description:
-      'A modern remote proctoring suite built to protect assessments, validate identity, and flag suspicious behaviour in real time.',
-    details: [
-      'Live monitoring, face recognition, and automated alerting create a trustworthy exam environment.',
-      'Supports multiple cameras and audio channels for high-stakes certification and government programs.',
-      'Integrates with assessment workflows to keep every session compliant and transparent.',
+    metaDescription:
+      'Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention.',
+    shortDescription:
+      'Manage remote assessments with proctoring services, AI-driven exam security, and malpractice prevention.',
+    heroDescription:
+      'Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention.',
+    overview: [
+      'Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention. Scale your assessment operations to eliminate exam centre infrastructure. Remote Proctoring and auto image capturing technology help simplify the exam invigilation process. Many training and certification institutes are using it successfully.',
+      'Using Remote Proctoring, organisations can conduct an exam of any scale. Candidates sitting at any location can be tracked using remote proctoring - candidates do not need to visit a specific location or exam centre.',
     ],
-    keyHighlights: [
-      'Identity validation',
-      'Browser lockdown',
-      'Suspicious behaviour alerts',
+    highlights: ['Remote invigilation at scale', 'AI-based malpractice prevention', 'Candidate tracking from any location'],
+    featureSectionTitle: 'Key Features',
+    featureItems: [
+      'Useful to manage online exams happening across multiple cities',
+      'Live Chat by Proctor with Candidate',
+      'Artificial Intelligence to identify cheating',
+      'AI-based Auto Proctoring',
+      'Eliminate Online Exam Malpractices',
+      'Video or image capturing during online exam process',
+      'Authenticate remote candidate easily',
+      'Remote Proctor can control exams from a remote location',
+      'Candidate Face Detection and Verification',
+      'Adopted by many universities and certification agencies globally',
     ],
-    features: [
-      {
-        icon: Monitor,
-        title: 'Live invigilation',
-        description: 'Observe candidate activity with automated monitoring and evidence capture.',
-      },
-      {
-        icon: Activity,
-        title: 'Behaviour analysis',
-        description: 'Detect unusual patterns and annotate review sessions for audit readiness.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Secure lockdown',
-        description: 'Prevent browser navigation and screen sharing during high-stakes assessments.',
-      },
-      {
-        icon: Layout,
-        title: 'Session reports',
-        description: 'Generate comprehensive invigilation reports for compliance and evaluation.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Low-friction setup',
-        description: 'Simple candidate onboarding with guided checks and compatibility warnings.',
-      },
-      {
-        icon: Cpu,
-        title: 'AI accuracy',
-        description: 'Modern machine learning models help minimise false positives and improve trust.',
-      },
+    secondarySectionTitle: 'Why Organisations Use It',
+    secondaryItems: [
+      'Eliminates dependence on exam centre infrastructure for remote assessments.',
+      'Helps simplify invigilation through remote proctoring and automated image capture.',
+      'Supports training institutes, certification bodies, and large-scale assessment teams.',
+      'Makes it possible to conduct exams internationally without requiring candidates to travel.',
     ],
-    benefits: [
-      {
-        title: 'Trustworthy delivery',
-        description: 'Create a defensible exam process with documentation and event tracking.',
-      },
-      {
-        title: 'Improved compliance',
-        description: 'Align invigilation with academic, government and corporate regulations.',
-      },
-      {
-        title: 'Reduced overhead',
-        description: 'Automate routine checks while giving teams a central review workspace.',
-      },
-    ],
-    whoItFor: ['Public exam councils', 'Universities', 'Corporate certification teams'],
-    related: ['online-assessment-system', 'digital-repository', 'digital-inclusion-accessibility'],
+    audience: ['Training institutes', 'Certification agencies', 'Assessment teams'],
+    related: ['online-assessment-system', 'onscreen-marking-solution', 'iso-consultancy'],
   },
   {
     slug: 'onscreen-marking-solution',
     name: 'Onscreen Marking Solution',
     category: 'Evaluation',
-    icon: FileText,
-    shortDescription: 'Digital answer script evaluation for faster marking and analytics.',
-    description:
-      'A digital marking platform that helps examiners evaluate scripts, assign marks, and deliver results with precision and speed.',
-    details: [
-      'Upload scanned responses or digital answer sheets, then enable examiner workflows with rich annotations.',
-      'Consolidated marking dashboards and calibration tools keep evaluation consistent across teams.',
-      'Suitable for academic boards, certification bodies, and university grading processes.',
+    icon: PenLine,
+    metaDescription:
+      'Onscreen Marking to evaluate Answer sheets digitally to simplify moderation and result processing.',
+    shortDescription:
+      'Evaluate answer sheets digitally to simplify moderation and result processing.',
+    heroDescription:
+      'Onscreen Marking to evaluate answer sheets digitally to simplify moderation and result processing.',
+    overview: [
+      'Onscreen Marking to evaluate answer sheets digitally to simplify moderation and result processing.',
+      'Digital Assessments with Artificial Intelligence for Candidate Authentication and Authorisation with multiple language-based assessments.',
     ],
-    keyHighlights: [
-      'Examiner login',
-      'Digital script evaluation',
-      'Analytics and review tools',
+    highlights: ['Digital answer evaluation', 'Simplified moderation', 'Quick result processing'],
+    featureSectionTitle: 'Key Features',
+    featureItems: [
+      'Simplified Moderation process',
+      'Quick result processing',
+      'Evaluate answer sheets digitally',
+      'Scanning answer sheets',
+      'Remove location constraint for examiners',
+      'Patented technology for security',
     ],
-    features: [
-      {
-        icon: BookOpenCheck,
-        title: 'Examiner workspace',
-        description: 'Provide evaluators with a distraction-free interface and fast scoring controls.',
-      },
-      {
-        icon: Layout,
-        title: 'Standardised rubrics',
-        description: 'Apply marking schemes consistently and capture reviewer feedback.',
-      },
-      {
-        icon: Database,
-        title: 'Secure storage',
-        description: 'Protect scripts with encrypted storage and controlled access rights.',
-      },
-      {
-        icon: Activity,
-        title: 'Result analytics',
-        description: 'Track marking progress, examiner performance, and score distributions.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Calibration support',
-        description: 'Help teams align grading standards with sample markers and review cycles.',
-      },
-      {
-        icon: Monitor,
-        title: 'Flexible input',
-        description: 'Accept scanned scripts, typed responses, or direct digital answer capture.',
-      },
+    secondarySectionTitle: 'Operational Outcomes',
+    secondaryItems: [
+      'Supports digital assessments with artificial intelligence for candidate authentication and authorisation.',
+      'Enables multiple language-based assessments for broader institutional use.',
+      'Removes the location constraint for examiners and helps teams mark from anywhere.',
+      'Improves speed, consistency, and security across moderation and result workflows.',
     ],
-    benefits: [
-      {
-        title: 'Consistent grading',
-        description: 'Reduce subjectivity and ensure transparent evaluation across examiners.',
-      },
-      {
-        title: 'Faster result cycles',
-        description: 'Complete marking programs faster with digital workflows and performance tracking.',
-      },
-      {
-        title: 'Easier audits',
-        description: 'Maintain an auditable trail of evaluations, corrections, and reviewer notes.',
-      },
-    ],
-    whoItFor: ['Exam boards', 'University departments', 'Certification authorities'],
-    related: ['online-assessment-system', 'digital-repository', 'library-management-system'],
-  },
-  {
-    slug: 'econtent',
-    name: 'eContent',
-    category: 'Content',
-    icon: BookOpen,
-    shortDescription: 'DRM-protected eBooks and eJournals for academic libraries and institutions.',
-    description:
-      'A modern digital content platform built for academic libraries, offering easy access to eBooks, journals and multimedia resources.',
-    details: [
-      'Support secure multi-device access for students, faculty, and research teams.',
-      'Manage licensing, DRM protection, and content discoverability from one platform.',
-      'Designed specifically for academic and institutional use cases.',
-    ],
-    keyHighlights: [
-      'eBooks & eJournals',
-      'DRM protection',
-      'Multi-device access',
-    ],
-    features: [
-      {
-        icon: BookOpen,
-        title: 'Content portal',
-        description: 'Offer an intuitive library experience for search, reading, and bookmarking.',
-      },
-      {
-        icon: Database,
-        title: 'License management',
-        description: 'Track entitlements, renewals and access rights across user groups.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'DRM safeguards',
-        description: 'Protect licensed content with watermarking and secure playback controls.',
-      },
-      {
-        icon: Accessibility,
-        title: 'Assistive support',
-        description: 'Deliver accessible reading experiences with screen-reader friendly interfaces.',
-      },
-      {
-        icon: Layout,
-        title: 'Offline reading',
-        description: 'Enable secure content download for users with intermittent connectivity.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Smart discovery',
-        description: 'Recommend titles and resources using metadata and usage patterns.',
-      },
-    ],
-    benefits: [
-      {
-        title: 'Stronger access control',
-        description: 'Protect licensed material with industry-standard DRM and usage policies.',
-      },
-      {
-        title: 'Improved engagement',
-        description: 'Support research and learning with accessible, discoverable content.',
-      },
-      {
-        title: 'Institutional fit',
-        description: 'Designed for academic and government use, not consumer ebook marketplaces.',
-      },
-    ],
-    whoItFor: ['Academic libraries', 'Research centres', 'Government repositories'],
-    related: ['digital-repository', 'digital-inclusion-accessibility', 'library-management-system'],
-  },
-  {
-    slug: 'cad-software',
-    name: 'CAD Software',
-    category: 'Design',
-    icon: Layout,
-    shortDescription: 'Computer-aided design tools for engineering and architecture institutions.',
-    description:
-      'A powerful CAD platform tailored to institutions that teach engineering, architecture, and product design.',
-    details: [
-      'Create precise drawings, 2D layouts, and 3D models with a modern academic workflow.',
-      'Offer instructor-led design labs and project review capabilities for engineering programmes.',
-      'Enable collaboration across students, faculty, and technical teams.',
-    ],
-    keyHighlights: [
-      'Academic CAD tools',
-      '2D & 3D modelling',
-      'Collaborative design workflows',
-    ],
-    features: [
-      {
-        icon: Layout,
-        title: 'Precision drafting',
-        description: 'Draw 2D plans, annotations, and schematics with classroom-ready controls.',
-      },
-      {
-        icon: Monitor,
-        title: '3D modelling',
-        description: 'Develop parametric models and assemblies with easy-to-use tools.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Project collaboration',
-        description: 'Share models with peers and instructors for feedback and review.',
-      },
-      {
-        icon: Accessibility,
-        title: 'Learning-first UI',
-        description: 'Simplified controls and templates keep courses accessible for new learners.',
-      },
-      {
-        icon: Database,
-        title: 'Asset library',
-        description: 'Manage reusable symbols, parts, and templates across classes.',
-      },
-      {
-        icon: Award,
-        title: 'Industry alignment',
-        description: 'Keep coursework aligned with modern engineering and architectural standards.',
-      },
-    ],
-    benefits: [
-      {
-        title: 'Project-ready labs',
-        description: 'Enable institutions to teach real-world CAD skills with a stable platform.',
-      },
-      {
-        title: 'Improved collaboration',
-        description: 'Bring design reviews into a shared, cloud-friendly workflow.',
-      },
-      {
-        title: 'Reduced learning curve',
-        description: 'A curated interface helps students focus on concepts, not configuration.',
-      },
-    ],
-    whoItFor: ['Engineering colleges', 'Architecture schools', 'Technical training centres'],
-    related: ['digital-repository', 'econtent', 'digital-inclusion-accessibility'],
+    audience: ['Exam boards', 'Universities', 'Certification authorities'],
+    related: ['online-assessment-system', 'proctoring-solution', 'digital-repository'],
   },
   {
     slug: 'iso-consultancy',
     name: 'ISO Implementation & Consultancy',
-    category: 'Compliance',
-    icon: Award,
-    shortDescription: 'ISO certification guidance, process documentation, and audit preparation.',
-    description:
-      'Support institutions in achieving ISO compliance with end-to-end advisory services and operational tooling.',
-    details: [
-      'Prepare documentation, workflows, and audit evidence for quality and security standards.',
-      'Guide teams through process implementation while keeping stakeholder communication aligned.',
-      'Adapt consultancy for academic, government, and corporate environments.',
+    category: 'Consultancy',
+    icon: BadgeCheck,
+    metaDescription:
+      'Customised ISO solutions for organisations of all sizes, delivered by globally certified consultants with diversified industry experience.',
+    shortDescription:
+      'Customised ISO solutions delivered by globally certified consultants and IT security experts.',
+    heroDescription:
+      'Customised ISO solutions for organisations of all sizes, delivered by globally certified consultants with diversified industry experience.',
+    overview: [
+      'Our customised solutions are appropriate for organisations of all sizes and nature, irrespective of their location. Our team comprises globally Certified (PECB & IRCA) ISO Consultants, Trainers and IT Security experts with diversified industry experience.',
+      'They work relentlessly to provide excellent consultancy services and achieve the highest level of customer satisfaction by developing sustainable systems across the globe.',
     ],
-    keyHighlights: [
-      'Certification guidance',
-      'Process documentation',
-      'Audit readiness',
+    highlights: ['Globally certified consultants', 'Sustainable systems', 'Customer satisfaction focus'],
+    featureSectionTitle: 'Services Offered',
+    featureItems: [
+      'ISO 9001 Implementation',
+      'ISO 20000 Implementation',
+      'ISO 22301 Implementation',
+      'ISO 27001 Implementation',
+      'Risk Assessment',
+      'IT Disaster Recovery',
     ],
-    features: [
-      {
-        icon: Award,
-        title: 'ISO process design',
-        description: 'Document quality and security practices with clear, repeatable workflows.',
-      },
-      {
-        icon: FileText,
-        title: 'Audit preparation',
-        description: 'Generate audit-ready evidence and corrective action logs.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Compliance tracking',
-        description: 'Monitor progress across requirements, stakeholders, and timelines.',
-      },
-      {
-        icon: Layout,
-        title: 'Training support',
-        description: 'Bring teams up to speed on process ownership and role accountability.',
-      },
-      {
-        icon: Monitor,
-        title: 'Documentation portal',
-        description: 'Centralise templates, records, and policy updates in a secure library.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Continuous improvement',
-        description: 'Embed a structured approach for ongoing quality enhancement.',
-      },
+    secondarySectionTitle: 'Why Organisations Choose It',
+    secondaryItems: [
+      'Appropriate for organisations of all sizes and nature, irrespective of location.',
+      'Delivered by globally certified ISO consultants, trainers, and IT security experts.',
+      'Backed by diversified industry experience and a relentless service mindset.',
+      'Focused on building sustainable systems and the highest level of customer satisfaction.',
     ],
-    benefits: [
-      {
-        title: 'Clear certification path',
-        description: 'Demystify ISO compliance with guided, sector-specific support.',
-      },
-      {
-        title: 'Stronger governance',
-        description: 'Build processes that scale with institutional change and oversight.',
-      },
-      {
-        title: 'Audit confidence',
-        description: 'Maintain a robust record of compliance and improvement actions.',
-      },
+    audience: ['Academic institutions', 'Government organisations', 'Corporate organisations'],
+    related: ['proctoring-solution', 'digital-repository', 'online-assessment-system'],
+  },
+  {
+    slug: 'cad-software',
+    name: 'CAD Software',
+    category: 'Design Technology',
+    icon: Compass,
+    metaDescription:
+      'CAD software to increase designer productivity, improve design quality and create a database for architectural, engineering and construction applications.',
+    shortDescription:
+      'CAD software to improve design productivity, quality, and compatibility for AEC applications.',
+    heroDescription:
+      'CAD software to increase designer productivity, improve design quality and create a database for architectural, engineering and construction applications.',
+    overview: [
+      'CAD software is used to increase the productivity of the designer, improve the quality of design and to create a database for architectural, engineering and construction applications.',
+      'By using the latest IntelliCAD 10.1 Engine, Open Design Alliance, dwg or dxf Libraries, ACIS 3D Modelling Kernel, and many other technologies, it ensures file support from early R2.5 right through to the latest version of dwg or dxf. It also supports other file formats including .dgn, .step or .stp, .iges or .igs, .stl, .obj, 2D PDF, 3D PDF, .svg, and .dae. The interface and commands are designed to be familiar and easy to migrate from any CAD software.',
     ],
-    whoItFor: ['Institutional leadership', 'Quality assurance teams', 'Regulatory departments'],
-    related: ['digital-repository', 'online-assessment-system', 'proctoring-solution'],
+    highlights: ['Broad file support', 'Familiar CAD interface', 'Permanent licence option'],
+    featureSectionTitle: 'Key Features',
+    featureItems: [
+      'Access Tutorial Videos from within the software',
+      'Block Library of over 5,000 Blocks, and users can add custom blocks too',
+      'ActCAD Converter for batch auditing and file conversions',
+      'Convert PDF to DWG or DXF files from within the software',
+      'Artisan 3D Renderer to create photorealistic presentations and drawings',
+      'Option for permanent licence',
+      'Fully compatible with AutoCAD file formats',
+      'Convert Image to DWG or DXF files with raster to vector support',
+      'Simple self-help module to address common queries',
+    ],
+    secondarySectionTitle: 'Why Design Teams Adopt It',
+    secondaryItems: [
+      'Improves designer productivity while raising the quality of design output.',
+      'Supports architectural, engineering, and construction applications with familiar commands.',
+      'Provides compatibility with a wide range of industry file formats for easier collaboration.',
+      'Helps institutions and organisations migrate from other CAD software with minimal friction.',
+    ],
+    audience: ['Engineering institutions', 'Architectural teams', 'Construction professionals'],
+    related: ['econtent', 'digital-repository', 'iso-consultancy'],
+  },
+  {
+    slug: 'econtent',
+    name: 'eContent',
+    category: 'Knowledge Content',
+    icon: BookOpen,
+    metaDescription:
+      'eBooks, eJournals and databases from various publishers and aggregators across Science, Technology, Medicine, Engineering, and more.',
+    shortDescription:
+      'eBooks, eJournals, and databases from multiple publishers and aggregators across key disciplines.',
+    heroDescription:
+      'eBooks, eJournals and databases from various publishers and aggregators across Science, Technology, Medicine, Engineering, and more.',
+    overview: [
+      'We understand the power of knowledge and information dissemination. Relevant content plays an important role in every step of the user journey to create a concentrated, pertinent experience in user interaction.',
+      'We offer eBooks, eJournals and databases from various publishers and aggregators. eBooks and eJournals are available in different subjects including Science, Technology, Medicine, Engineering, Computer Science, Management, Law, Humanities and Education.',
+      'We empower knowledge custodians and users. We support researchers to publish content, expanding the boundaries of knowledge for the benefit of the community.',
+    ],
+    highlights: ['Multi-subject digital collections', 'Publisher and aggregator partnerships', 'Support for research publishing'],
+    featureSectionTitle: 'Content and Service Areas',
+    featureItems: [
+      'eBooks, eJournals and databases from various publishers and aggregators',
+      'Subject coverage across Science, Technology, Medicine, Engineering, Computer Science, Management, Law, Humanities and Education',
+      'Content experiences designed to support relevant, concentrated user interaction',
+      'Support for researchers to publish content and extend the boundaries of knowledge',
+    ],
+    secondarySectionTitle: 'How It Supports Knowledge Communities',
+    secondaryItems: [
+      'Helps institutions deliver trusted digital collections to learners, faculty, and professionals.',
+      'Supports knowledge custodians with content access that is organised, discoverable, and relevant.',
+      'Extends the reach of scholarly and professional information through digital dissemination workflows.',
+      'Creates a dependable content foundation for academic, government, and corporate organisations globally.',
+    ],
+    audience: ['Libraries', 'Research communities', 'Knowledge-driven organisations'],
+    related: ['digital-repository', 'digital-inclusion-accessibility', 'library-management-system'],
   },
   {
     slug: 'digital-inclusion-accessibility',
     name: 'Digital Inclusion & Accessibility',
     category: 'Accessibility',
     icon: Accessibility,
-    shortDescription: 'Accessible digital content and WCAG-compliant assistive support.',
-    description:
-      'Build inclusive digital experiences with accessibility-first content, assistive features, and compliance guidance.',
-    details: [
-      'Ensure websites, content platforms, and digital services meet international accessibility norms.',
-      'Support assistive tools and navigation patterns for diverse learner and citizen needs.',
-      'Enable organisations to deliver equitable access across devices and assistive technologies.',
+    metaDescription:
+      'AI-powered digitization, translation and audio-tization services for printed and handwritten documents across 60 global languages, supporting institutions and people with print disabilities.',
+    shortDescription:
+      'AI-powered digitisation, translation, and audio-tisation services across 60 global languages.',
+    heroDescription:
+      'AI-powered digitization, translation and audio-tization services for printed and handwritten documents across 60 global languages, supporting institutions and people with print disabilities.',
+    overview: [
+      'Solution for digitally transforming schools, colleges, universities, libraries and offices with AI-powered technology products that offer cutting-edge digitisation, translation and audio-tisation services for printed as well as handwritten documents across 60 global languages.',
+      'The solutions also contribute to the social impact mission of making institutions inclusive for people with print disabilities such as the visually impaired, low-vision users, people with dyslexia, and for people from regional language backgrounds.',
     ],
-    keyHighlights: [
-      'WCAG compliance',
-      'Assistive support',
-      'Inclusive design',
+    highlights: ['Digitisation across 60 global languages', 'Translation and audio-tisation services', 'Inclusive access for people with print disabilities'],
+    featureSectionTitle: 'Key Capabilities',
+    featureItems: [
+      'AI-powered digitisation for printed as well as handwritten documents',
+      'Translation services across 60 global languages',
+      'Audio-tisation services that make content easier to consume in accessible formats',
+      'Digital transformation support for schools, colleges, universities, libraries and offices',
     ],
-    features: [
-      {
-        icon: Accessibility,
-        title: 'Accessibility audits',
-        description: 'Review digital properties for compliance, usability, and assistive compatibility.',
-      },
-      {
-        icon: BookOpen,
-        title: 'Inclusive content',
-        description: 'Create layouts and assets designed for readability, navigation, and assistive consumption.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Screen-reader support',
-        description: 'Deliver semantic markup and voice-friendly navigation for all users.',
-      },
-      {
-        icon: Layout,
-        title: 'Keyboard-first journeys',
-        description: 'Ensure every workflow performs reliably without a mouse or touch screen.',
-      },
-      {
-        icon: Monitor,
-        title: 'Accessibility training',
-        description: 'Equip teams with knowledge for accessible design and content publishing.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Policy alignment',
-        description: 'Keep output aligned with government and institutional accessibility policies.',
-      },
+    secondarySectionTitle: 'Inclusive Impact',
+    secondaryItems: [
+      'Helps institutions serve visually impaired and low-vision users with more inclusive access to information.',
+      'Supports people with dyslexia and people from regional language backgrounds through alternative content experiences.',
+      'Extends the social impact mission of digital inclusion while improving access to institutional knowledge.',
+      'Makes accessibility part of everyday operations rather than an afterthought in content delivery.',
     ],
-    benefits: [
-      {
-        title: 'Broader reach',
-        description: 'Make content available to all learners, citizens, and internal stakeholders.',
-      },
-      {
-        title: 'Policy compliance',
-        description: 'Reduce risk by following established accessibility standards and documentation.',
-      },
-      {
-        title: 'Better usability',
-        description: 'Enhance interfaces for everyone by designing with clarity and organization.',
-      },
-    ],
-    whoItFor: ['Universities', 'Government services', 'Corporate digital teams'],
+    audience: ['Educational institutions', 'Libraries', 'Public and private organisations'],
     related: ['econtent', 'digital-repository', 'library-management-system'],
   },
   {
     slug: 'rfid-library',
     name: 'RFID for Library',
-    category: 'Automation',
-    icon: CreditCard,
-    shortDescription: 'Automated check-in/check-out, inventory, and anti-theft for modern libraries.',
-    description:
-      'A library automation system that uses RFID technology to streamline circulation, inventory and security.',
-    details: [
-      'Enable fast self-service and staff-assisted issue management with RFID-tagged assets.',
-      'Track inventory in real time and reduce manual reconciliation across physical collections.',
-      'Protect valuable resources with intelligent anti-theft and access controls.',
+    category: 'Library Automation',
+    icon: Wifi,
+    metaDescription:
+      'RFID-based library management using radio wave technology to identify, track and manage library materials with automated check-in and check-out and enhanced security.',
+    shortDescription:
+      'RFID-based library management for automated circulation, inventory tracking, and security.',
+    heroDescription:
+      'RFID-based library management using radio wave technology to identify, track and manage library materials with automated check-in and check-out and enhanced security.',
+    overview: [
+      'RFID technology is a wireless communication technology that uses radio waves to identify and track objects. In libraries, RFID tags are embedded in library materials such as books, CDs and DVDs, and these tags can be read and programmed by RFID readers located in the library. Each RFID tag contains a unique identifier, effectively acting as a digital fingerprint for the associated item. This identifier is instrumental in tracking the material location, circulation status, and other pertinent details. The RFID Library Management System utilises this advanced technology to optimise library operations comprehensively.',
+      'Libraries around the world are embracing the power of RFID technology, transforming the way users interact with books and information. With RFID tags embedded in each book, libraries now offer a seamless and efficient borrowing experience. Library patrons can simply wave their books at self-service kiosks, instantly updating their accounts, saving time and ensuring accurate inventory management.',
+      'Step into the future of library services with RFID and enjoy a new level of convenience in operations.',
     ],
-    keyHighlights: [
-      'Self-service circulation',
-      'Inventory automation',
-      'Asset security',
+    highlights: ['Wireless identification and tracking', 'Self-service borrowing experience', 'Optimised library operations'],
+    featureSectionTitle: 'Benefits',
+    featureItems: [
+      'Time Saving for Both Librarian and Patron',
+      'Cost Saving in the Long Run',
+      'Improved Circulation Process',
+      'Efficient Stock Management',
+      'Excellent Security',
+      'Data Analytics of Patrons, with SIP2 or NCIP integration compatibility',
     ],
-    features: [
-      {
-        icon: CreditCard,
-        title: 'RFID checkout',
-        description: 'Let users borrow and return materials instantly with contactless scanning.',
-      },
-      {
-        icon: Database,
-        title: 'Inventory insight',
-        description: 'Monitor collection health with automated stock checks and location updates.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Anti-theft detection',
-        description: 'Protect library assets with exit sensors and alerts for unauthorised movement.',
-      },
-      {
-        icon: Layout,
-        title: 'Optimised workflows',
-        description: 'Simplify circulation, holds, and reservations with RFID-enabled operations.',
-      },
-      {
-        icon: BookOpen,
-        title: 'Patron convenience',
-        description: 'Offer a seamless experience for students, staff, and community readers.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Real-time tracking',
-        description: 'See where items are and when they move within the library ecosystem.',
-      },
+    secondarySectionTitle: 'RFID Solution Includes',
+    secondaryItems: [
+      'RFID Tags for Books, CD or DVDs',
+      'Staff Station',
+      'Self Service Kiosk',
+      'Inventory Management',
+      'RFID Security Gate',
+      'Intelligent Shelf',
+      'Book Drop with Auto Sorter',
     ],
-    benefits: [
-      {
-        title: 'Operational speed',
-        description: 'Reduce queue times and workload for library staff with contactless automation.',
-      },
-      {
-        title: 'Better asset control',
-        description: 'Know the status of your collection with continuous monitoring.',
-      },
-      {
-        title: 'Visitor satisfaction',
-        description: 'Improve library accessibility and convenience for every user.',
-      },
-    ],
-    whoItFor: ['Public libraries', 'Academic libraries', 'Corporate knowledge centres'],
+    audience: ['Academic libraries', 'Public libraries', 'Institutional libraries'],
     related: ['library-management-system', 'digital-repository', 'econtent'],
   },
   {
@@ -556,133 +305,74 @@ export const solutions = [
     name: 'Digital Repository',
     category: 'Repository',
     icon: Database,
-    shortDescription: 'A searchable institutional repository for research, theses, and reports.',
-    description:
-      'A scalable repository solution for managing research output, theses, reports, and institutional knowledge.',
-    details: [
-      'Provide secure search and access to publications, metadata, and archived records.',
-      'Keep research safe with long-term preservation and access controls.',
-      'Support academic and government transparency with publish-ready workflows.',
+    metaDescription:
+      'DSpace-based digital repository system for long-term storage, access and preservation of digital content for institutions.',
+    shortDescription:
+      'DSpace-based digital repository for long-term storage, access, and preservation of digital content.',
+    heroDescription:
+      'DSpace-based digital repository system for long-term storage, access and preservation of digital content for institutions.',
+    overview: [
+      'DSpace repository software serves a specific need as a digital archives system, focused on the long-term storage, access and preservation of digital content.',
+      'DSpace is constructed with Java web applications, multiple programs and an associated metadata store. The web applications provide interfaces for administration, deposit, ingest, search and access. The asset store is maintained on a file system or similar storage system. Metadata, including access and configuration information, is stored in a relational database supporting PostgreSQL and Oracle. DSpace holdings are available primarily via a web interface. More recent versions of DSpace also support faceted search and browse functionality using Apache Solr.',
     ],
-    keyHighlights: [
-      'Scalable archive',
-      'Secure search',
-      'Research management',
+    highlights: ['Long-term digital preservation', 'Metadata-driven access', 'Web-based discovery'],
+    featureSectionTitle: 'DSpace Enables Organisations To',
+    featureItems: [
+      'Capture and describe digital material using a submission workflow module or a variety of programmatic ingest options',
+      'Distribute an organisation digital assets over the web through a search and retrieval system',
+      'Preserve digital assets over the long term',
     ],
-    features: [
-      {
-        icon: Database,
-        title: 'Metadata driven',
-        description: 'Structure content with rich metadata for discovery and governance.',
-      },
-      {
-        icon: BookOpen,
-        title: 'Search experience',
-        description: 'Help users find documents quickly with powerful filters and cross-references.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Controlled access',
-        description: 'Define view, download, and sharing policies for sensitive records.',
-      },
-      {
-        icon: Layout,
-        title: 'Preservation tools',
-        description: 'Keep documents accessible and compliant with archive management features.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Publish workflows',
-        description: 'Support review, approval and publishing for institutional research output.',
-      },
-      {
-        icon: Accessibility,
-        title: 'Cross-device discovery',
-        description: 'Make repositories available on mobile and desktop with responsive interfaces.',
-      },
+    secondarySectionTitle: 'Key Features of DSpace',
+    secondaryItems: [
+      'Open source software',
+      'Completely customisable to fit user needs',
+      'Manage and preserve all formats of digital content, including PDF, Word, JPEG, MPEG, and TIFF files',
+      'Apache SOLR-based search',
+      'Granular group-based access control',
     ],
-    benefits: [
-      {
-        title: 'Research visibility',
-        description: 'Make institutional output easier to discover and share.',
-      },
-      {
-        title: 'Preservation certainty',
-        description: 'Keep documents safe, searchable and governed for the long term.',
-      },
-      {
-        title: 'Operational clarity',
-        description: 'Bring publication, archiving and access into one managed system.',
-      },
-    ],
-    whoItFor: ['Universities', 'Research institutions', 'Government archives'],
-    related: ['econtent', 'digital-inclusion-accessibility', 'library-management-system'],
+    audience: ['Universities', 'Research institutions', 'Archives and repositories'],
+    related: ['econtent', 'library-management-system', 'digital-inclusion-accessibility'],
   },
   {
     slug: 'library-management-system',
     name: 'Library Management System',
-    category: 'Library',
-    icon: BookOpenCheck,
-    shortDescription: 'Full library automation with cataloguing, circulation, OPAC and reporting.',
-    description:
-      'A complete library management platform that streamlines cataloguing, circulation, OPAC and reporting for modern information centres.',
-    details: [
-      'Manage bibliographic records, circulation workflows and public catalog interfaces in one system.',
-      'Give library staff tools for acquisition, lending, returns, and statistics monitoring.',
-      'Create a consistent digital library foundation for academic and corporate collections.',
+    category: 'Library Systems',
+    icon: Library,
+    metaDescription:
+      'Koha open-source integrated library system used worldwide by public, school, special and academic libraries, fully featured and scalable.',
+    shortDescription:
+      'Koha-based library management system with cataloguing, circulation, OPAC, and reporting.',
+    heroDescription:
+      'Koha open-source integrated library system used worldwide by public, school, special and academic libraries, fully featured and scalable.',
+    overview: [
+      'Koha is an open-source integrated library system (ILS), used worldwide by public, school and special libraries, as well as larger academic libraries. Koha is a fully featured, scalable library management system. Development is sponsored by libraries of varying types and sizes, volunteers, and support companies worldwide.',
+      'Koha is a web-based ILS with a SQL database, MariaDB or MySQL, back end, with cataloguing data stored in MARC and accessible via Z39.50 or SRU. The user interface, OPAC, is configurable and has been translated into many languages.',
     ],
-    keyHighlights: [
-      'Cataloguing & circulation',
-      'OPAC access',
-      'Reporting dashboards',
+    highlights: ['Open-source and scalable', 'Web-based OPAC', 'Used worldwide across library types'],
+    featureSectionTitle: 'Koha Modules',
+    featureItems: [
+      'Union catalog facility',
+      'Online circulation',
+      'Barcode printing',
+      'Patron card creation',
+      'Report generation',
+      'Patron self-registration via OPAC',
+      'Cataloguing',
+      'Circulation',
+      'Serials',
+      'Acquisition',
+      'Administration',
+      'Integration with discovery',
     ],
-    features: [
-      {
-        icon: BookOpenCheck,
-        title: 'Catalog management',
-        description: 'Create and maintain bibliographic records with structure and metadata.',
-      },
-      {
-        icon: Layout,
-        title: 'Circulation desk',
-        description: 'Handle check-outs, renewals, reservations and fines with simple workflows.',
-      },
-      {
-        icon: Monitor,
-        title: 'Public OPAC',
-        description: 'Provide patrons with a modern searchable catalogue and resource discovery tools.',
-      },
-      {
-        icon: Database,
-        title: 'Reporting engine',
-        description: 'Generate reports that highlight usage, inventory health and collection trends.',
-      },
-      {
-        icon: Sparkles,
-        title: 'Policy automation',
-        description: 'Apply lending rules and hold policies consistently across collections.',
-      },
-      {
-        icon: ShieldCheck,
-        title: 'Secure asset control',
-        description: 'Protect library holdings with access rules and inventory tracking.',
-      },
+    secondarySectionTitle: 'Key Highlights',
+    secondaryItems: [
+      'Full-featured ILS with acquisitions, circulation, cataloguing, serials management, authorities, flexible reporting, label printing, multi-format notices, and offline circulation.',
+      'Multilingual and translatable, with a large number of available languages and more added every year.',
+      'Full-text searching with enhanced catalogue display and support for integrations such as Amazon, Google, LibraryThing, Open Library, and Syndetics.',
+      'Library standards compliant with MARC 21, UNIMARC, Z39.50, SRU or SW, SIP2, and SIP or NCIP for interoperability.',
+      'Web-based interfaces for OPAC, circulation, management, and self-checkout using standards-compliant web technologies.',
     ],
-    benefits: [
-      {
-        title: 'Library efficiency',
-        description: 'Improve staff workflows and reduce manual tasks across the library lifecycle.',
-      },
-      {
-        title: 'Patron satisfaction',
-        description: 'Deliver a clean discovery experience for students, faculty, and colleagues.',
-      },
-      {
-        title: 'Stronger oversight',
-        description: 'Understand collection performance and availability at a glance.',
-      },
-    ],
-    whoItFor: ['Academic libraries', 'Corporate knowledge centres', 'Government archives'],
-    related: ['rfid-library', 'econtent', 'digital-repository'],
+    audience: ['Public libraries', 'School libraries', 'Academic libraries'],
+    related: ['rfid-library', 'digital-repository', 'econtent'],
   },
 ]

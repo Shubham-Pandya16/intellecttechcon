@@ -1,22 +1,24 @@
 import { Link } from 'react-router-dom'
 
-export default function SolutionCard({ solution }) {
+import Reveal from './Reveal'
+
+export default function SolutionCard({ solution, index = 0 }) {
   const Icon = solution.icon
 
   return (
-    <Link
-      to={`/solutions/${solution.slug}`}
-      className="group rounded-[24px] border border-border bg-white p-6 transition duration-200 hover:-translate-y-1 hover:shadow-soft"
-    >
-      <div className="h-1.5 w-16 rounded-full bg-primary transition group-hover:bg-accent" />
-      <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
-        <Icon className="h-6 w-6" />
-      </div>
-      <h3 className="mt-6 text-xl font-semibold text-text">{solution.name}</h3>
-      <p className="mt-3 text-sm leading-7 text-muted">{solution.shortDescription}</p>
-      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-        Learn More →
-      </span>
-    </Link>
+    <Reveal as="div" variant="card" delay={index * 80}>
+      <Link to={`/solutions/${solution.slug}`} className="solution-card group block rounded-[28px] border border-border bg-white p-7">
+        <div className="solution-card-bar h-1.5 w-20 rounded-full bg-primary transition-colors duration-200 group-hover:bg-accent" />
+        <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-[20px] bg-primary/10 text-primary">
+          <Icon className="h-6 w-6" strokeWidth={1.5} />
+        </div>
+        <h3 className="card-title mt-6 text-text">{solution.name}</h3>
+        <p className="body-copy mt-3">{solution.shortDescription}</p>
+        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.02em] text-accent">
+          Learn more
+          <span aria-hidden="true">{'->'}</span>
+        </span>
+      </Link>
+    </Reveal>
   )
 }

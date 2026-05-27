@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Solutions from './pages/Solutions'
-import SolutionDetail from './pages/SolutionDetail'
-import About from './pages/About'
+import { Route, Routes, useLocation } from 'react-router-dom'
+
 import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
+import About from './pages/About'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import SolutionDetail from './pages/SolutionDetail'
+import Solutions from './pages/Solutions'
 
 function App() {
   const location = useLocation()
@@ -16,16 +17,19 @@ function App() {
 
   useEffect(() => {
     setVisible(false)
-    const id = window.setTimeout(() => setVisible(true), 20)
+    const id = window.setTimeout(() => setVisible(true), 200)
     return () => window.clearTimeout(id)
-  }, [location.pathname])
+  }, [location.key])
 
   return (
     <div className="min-h-screen bg-bg text-text font-sans">
       <Navbar />
       <ScrollToTop />
-      <main className={`transition-opacity duration-500 ease-out ${visible ? 'opacity-100' : 'opacity-0'}`}>
-        <Routes>
+      <main
+        key={location.key}
+        className={`transition-opacity ${visible ? 'opacity-100 duration-300' : 'opacity-0 duration-200'} ease-out`}
+      >
+        <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/solutions/:slug" element={<SolutionDetail />} />

@@ -1,13 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { solutions } from '../data/solutions'
+
 import logo from '../../assets/intellecttechcon_logo.gif'
+import { solutions } from '../data/solutions'
+
+const navLinkClass = ({ isActive }) =>
+  `nav-link relative text-muted transition hover:text-primary ${isActive ? 'is-active text-primary' : ''}`
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [ready, setReady] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -15,6 +20,11 @@ export default function Navbar() {
     handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setReady(true), 100)
+    return () => window.clearTimeout(id)
   }, [])
 
   useEffect(() => {
@@ -37,46 +47,28 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 backdrop-blur-xl ${
-        scrolled ? 'bg-white/90 border-slate-200 shadow-sm' : 'bg-white/70 border-transparent'
-      }`}
+        ready ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      } ${scrolled ? 'border-slate-200 bg-white/92 shadow-sm' : 'border-transparent bg-white/75'}`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-        <Link to="/" className="flex items-center text-lg font-semibold text-primary">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="Intellect Techcon Solutions logo" className="h-20 w-auto rounded-xl border border-slate-200 bg-white" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              `text-sm font-medium transition ${isActive ? 'text-primary underline decoration-accent underline-offset-4' : 'text-muted hover:text-primary'}`
-            }
-          >
+          <NavLink to="/" end className={navLinkClass}>
             Home
           </NavLink>
-          <div
-            className="relative"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <button
-              className={`group inline-flex items-center gap-1 text-sm font-medium transition ${
-                isSolutionsActive
-                  ? 'text-primary underline decoration-accent underline-offset-4'
-                  : 'text-muted hover:text-primary'
-              }`}
-            >
+          <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+            <Link to="/solutions" className={`nav-link relative inline-flex items-center text-muted transition hover:text-primary ${isSolutionsActive ? 'is-active text-primary' : ''}`}>
               Solutions
-            </button>
+            </Link>
             <div
-              className={`absolute left-0 top-full hidden w-[32rem] pt-4 md:block ${
+              className={`absolute left-0 top-full hidden w-[34rem] pt-4 md:block ${
                 dropdownOpen ? 'visible opacity-100' : 'invisible opacity-0'
-              }`}
+              } transition-opacity duration-200`}
             >
-              <div
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft transition-opacity duration-200"
-              >
+              <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
                 <div className="grid gap-4 sm:grid-cols-2">
                   {solutionLinks.map((solution) => {
                     const Icon = solution.icon
@@ -84,14 +76,14 @@ export default function Navbar() {
                       <Link
                         key={solution.slug}
                         to={`/solutions/${solution.slug}`}
-                        className="group flex items-start gap-3 rounded-3xl border border-slate-200 bg-slate-50 p-4 transition hover:border-accent hover:bg-white"
+                        className="group flex items-start gap-3 rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:border-accent hover:bg-white"
                       >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-accent/10 group-hover:text-accent">
-                          <Icon className="h-5 w-5" />
+                        <div className="mt-0.5 text-primary">
+                          <Icon className="h-4 w-4" strokeWidth={1.5} />
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-text">{solution.name}</p>
-                          <p className="text-sm text-muted">Explore the solution page</p>
+                          <p className="mt-1 text-sm text-muted">{solution.shortDescription}</p>
                         </div>
                       </Link>
                     )
@@ -100,29 +92,16 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `text-sm font-medium transition ${isActive ? 'text-primary underline decoration-accent underline-offset-4' : 'text-muted hover:text-primary'}`
-            }
-          >
+          <NavLink to="/about" className={navLinkClass}>
             About
           </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `text-sm font-medium transition ${isActive ? 'text-primary underline decoration-accent underline-offset-4' : 'text-muted hover:text-primary'}`
-            }
-          >
+          <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          <Link
-            to="/contact"
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#264880]"
-          >
+          <Link to="/contact" className="btn-primary">
             Get in Touch
           </Link>
         </div>
@@ -132,7 +111,7 @@ export default function Navbar() {
           onClick={() => setIsOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isOpen ? <X className="h-5 w-5" strokeWidth={1.5} /> : <Menu className="h-5 w-5" strokeWidth={1.5} />}
         </button>
       </div>
 
@@ -142,49 +121,45 @@ export default function Navbar() {
         }`}
       >
         <div className="mb-8 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-lg font-semibold text-white">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="Intellect Techcon Solutions logo" className="h-16 w-auto rounded-xl border border-slate-500 bg-slate-900" />
           </Link>
           <button onClick={() => setIsOpen(false)} aria-label="Close menu">
-            <X className="h-5 w-5 text-white" />
+            <X className="h-5 w-5 text-white" strokeWidth={1.5} />
           </button>
         </div>
-        <nav className="space-y-4 text-sm font-medium text-slate-200">
-          <Link to="/" className="block hover:text-white" onClick={() => setIsOpen(false)}>
+        <nav className="space-y-4 text-slate-200">
+          <Link to="/" className="nav-link-mobile block" onClick={() => setIsOpen(false)}>
             Home
           </Link>
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.18em] text-accent">Solutions</p>
-            <div className="grid gap-3">
+            <p className="section-label">Solutions</p>
+            <div className="mt-3 grid gap-3">
               {solutionLinks.map((solution) => {
                 const Icon = solution.icon
                 return (
                   <Link
                     key={solution.slug}
                     to={`/solutions/${solution.slug}`}
-                    className="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm transition hover:border-accent hover:text-white"
+                    className="flex items-center gap-3 rounded-[22px] border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm transition hover:border-accent hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Icon className="h-5 w-5 text-accent" />
+                    <Icon className="h-4 w-4 text-accent" strokeWidth={1.5} />
                     {solution.name}
                   </Link>
                 )
               })}
             </div>
           </div>
-          <Link to="/about" className="block hover:text-white" onClick={() => setIsOpen(false)}>
+          <Link to="/about" className="nav-link-mobile block" onClick={() => setIsOpen(false)}>
             About
           </Link>
-          <Link to="/contact" className="block hover:text-white" onClick={() => setIsOpen(false)}>
+          <Link to="/contact" className="nav-link-mobile block" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
         </nav>
         <div className="mt-8">
-          <Link
-            to="/contact"
-            className="inline-flex w-full items-center justify-center rounded-full border border-accent bg-transparent px-5 py-3 text-sm font-semibold text-accent transition hover:bg-accent/10"
-            onClick={() => setIsOpen(false)}
-          >
+          <Link to="/contact" className="btn-secondary w-full justify-center text-white hover:bg-accent/12" onClick={() => setIsOpen(false)}>
             Get in Touch
           </Link>
         </div>

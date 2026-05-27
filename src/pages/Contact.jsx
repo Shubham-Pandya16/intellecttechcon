@@ -1,15 +1,21 @@
 import { useState } from 'react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+
 import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import RevealSection from '../components/RevealSection'
-import { solutions } from '../data/solutions'
+import Seo from '../components/Seo'
+import { contactDetails } from '../data/siteContent'
 
 export default function Contact() {
   const [form, setForm] = useState({
-    name: '',
-    email: '',
+    firstName: '',
+    lastName: '',
     organisation: '',
-    interest: '',
+    country: '',
+    email: '',
     message: '',
+    phoneNumber: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
@@ -22,108 +28,90 @@ export default function Contact() {
     console.log('Contact request submitted', form)
   }
 
+  const fields = [
+    { label: 'First Name', key: 'firstName', type: 'text', placeholder: 'First Name' },
+    { label: 'Last Name', key: 'lastName', type: 'text', placeholder: 'Last Name' },
+    { label: 'Organisation (optional)', key: 'organisation', type: 'text', placeholder: 'Organisation (optional)' },
+    { label: 'Country', key: 'country', type: 'text', placeholder: 'Country' },
+    { label: 'Email', key: 'email', type: 'email', placeholder: 'Email' },
+    { label: 'Phone Number (with country code)', key: 'phoneNumber', type: 'text', placeholder: '+971 00 0000000' },
+  ]
+
   return (
-    <div className="pt-[88px]">
+    <div className="pt-[112px]">
+      <Seo
+        title="Contact"
+        description="Contact Intellect Techcon Solutions for technology and content services, product enquiries, demos, and partnerships."
+      />
+
       <PageHero
-        label="CONTACT"
+        label="Contact"
         title="Get in Touch"
-        description="Reach out for demos, partnerships, or to discuss how our solutions can support your institution."
+        description="Reach out to discuss technology and content solutions, product enquiries, demos, or partnerships for your organisation."
         variant="soft"
       />
 
-      <RevealSection className="bg-white py-16">
+      <RevealSection className="section-space bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <div className="space-y-8 rounded-[32px] border border-border bg-surface p-10">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+            <Reveal as="div" variant="card" className="space-y-8 rounded-[32px] border border-border bg-surface p-10">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Email</p>
-                <p className="mt-3 text-lg font-semibold text-text">sales@intellecttechcon.com</p>
+                <p className="section-label">Contact Details</p>
+                <p className="body-copy mt-4">
+                  We would love to hear about your requirements and help identify the right technology and content combination for your organisation.
+                </p>
               </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Phone</p>
-                <p className="mt-3 text-lg font-semibold text-text">+971 50 6930558</p>
+              <div className="space-y-5">
+                <p className="flex items-center gap-3 text-base font-semibold text-text">
+                  <Mail className="h-5 w-5 text-accent" strokeWidth={1.5} />
+                  {contactDetails.email}
+                </p>
+                <p className="flex items-center gap-3 text-base font-semibold text-text">
+                  <Phone className="h-5 w-5 text-accent" strokeWidth={1.5} />
+                  {contactDetails.phone}
+                </p>
+                <p className="flex items-start gap-3 text-base font-semibold text-text">
+                  <MapPin className="mt-0.5 h-5 w-5 text-accent" strokeWidth={1.5} />
+                  <span>{contactDetails.address}</span>
+                </p>
               </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Location</p>
-                <p className="mt-3 text-lg font-semibold text-text">P.O.Box 88878<br/>Dubai, United Arab Emirates</p>
-              </div>
-              <p className="text-sm leading-7 text-muted">
-                We’d love to hear about your requirements and help you identify the right combination of solutions for your institution.
-              </p>
-            </div>
+            </Reveal>
 
-            <div className="rounded-[32px] border border-border bg-surface p-10">
-              <div className="space-y-6">
-                <div>
-                  <label className="text-sm font-semibold text-text">Name</label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={handleChange('name')}
-                    className="mt-3 w-full rounded-3xl px-5 py-3"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-text">Email</label>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange('email')}
-                    className="mt-3 w-full rounded-3xl px-5 py-3"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-text">Organisation</label>
-                  <input
-                    type="text"
-                    value={form.organisation}
-                    onChange={handleChange('organisation')}
-                    className="mt-3 w-full rounded-3xl px-5 py-3"
-                    placeholder="Your organisation"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-text">Solution of Interest</label>
-                  <select
-                    value={form.interest}
-                    onChange={handleChange('interest')}
-                    className="mt-3 w-full rounded-3xl px-5 py-3"
-                  >
-                    <option value="">Select a solution</option>
-                    {solutions.map((solution) => (
-                      <option key={solution.slug} value={solution.name}>
-                        {solution.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div>
+            <Reveal as="div" variant="card" delay={80} className="rounded-[32px] border border-border bg-surface p-10">
+              <div className="grid gap-6 md:grid-cols-2">
+                {fields.map((field) => (
+                  <div key={field.key} className={field.key === 'organisation' || field.key === 'email' || field.key === 'phoneNumber' ? 'md:col-span-2' : ''}>
+                    <label className="text-sm font-semibold text-text">{field.label}</label>
+                    <input
+                      type={field.type}
+                      value={form[field.key]}
+                      onChange={handleChange(field.key)}
+                      className="form-input mt-3 w-full rounded-3xl px-5 py-3.5"
+                      placeholder={field.placeholder}
+                    />
+                  </div>
+                ))}
+                <div className="md:col-span-2">
                   <label className="text-sm font-semibold text-text">Message</label>
                   <textarea
                     value={form.message}
                     onChange={handleChange('message')}
-                    className="mt-3 h-40 w-full rounded-3xl px-5 py-3 resize-none"
-                    placeholder="Tell us about your project or requirements"
+                    className="form-input mt-3 h-40 w-full resize-none rounded-3xl px-5 py-3.5"
+                    placeholder="Message"
                   />
                 </div>
-                <div>
-                  <button
-                    type="button"
-                    onClick={handleSubmit}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#264880]"
-                  >
+                <div className="md:col-span-2">
+                  <button type="button" onClick={handleSubmit} className="btn-primary w-full justify-center">
                     Submit Request
                   </button>
                 </div>
                 {submitted && (
-                  <p className="rounded-3xl bg-primary/10 px-5 py-4 text-sm text-primary">
-                    Thanks for reaching out! We will get back to you shortly.
+                  <p className="md:col-span-2 rounded-3xl bg-primary/10 px-5 py-4 text-sm text-primary">
+                    Thanks for reaching out. We will get back to you shortly.
                   </p>
                 )}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </RevealSection>
