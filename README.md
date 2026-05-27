@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Intellect Techcon Solutions
 
 A multi-page marketing website for Intellect Techcon Solutions, built with React, React Router DOM, Tailwind CSS, and lucide-react.
