@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
+import logo from '../../assets/intellecttechcon_logo.gif'
 
 export default function Footer() {
   return (
     <footer className="bg-dark text-slate-100">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-3 md:px-8">
         <div>
-          <p className="text-lg font-semibold text-white">Intellect Techcon Solutions</p>
+          <div className="flex items-center">
+            <img src={logo} alt="Intellect Techcon Solutions logo" className="h-20 w-auto rounded-xl border border-slate-700 bg-white" />
+          </div>
           <p className="mt-4 max-w-sm text-sm leading-7 text-slate-300">
             Trusted technology and content solutions for academic, government and corporate sectors across United Arab Emirates.
           </p>
@@ -29,7 +32,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-700 px-4 py-5 text-center text-sm text-slate-500 md:px-8">
-        © {new Date().getFullYear()} Intellect Techcon Solutions. All rights reserved.
+        &copy; {new Date().getFullYear()} Intellect Techcon Solutions. All rights reserved.
       </div>
     </footer>
   )

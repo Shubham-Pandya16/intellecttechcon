@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { solutions } from '../data/solutions'
+import logo from '../../assets/intellecttechcon_logo.gif'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -40,9 +41,8 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2 text-lg font-semibold text-primary">
-          <span>Intellect Techcon Solutions</span>
-          <span className="mt-0.5 inline-block h-2 w-2 rounded-full bg-accent" />
+        <Link to="/" className="flex items-center text-lg font-semibold text-primary">
+          <img src={logo} alt="Intellect Techcon Solutions logo" className="h-20 w-auto rounded-xl border border-slate-200 bg-white" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -55,9 +55,12 @@ export default function Navbar() {
           >
             Home
           </NavLink>
-          <div className="relative" onMouseLeave={() => setDropdownOpen(false)}>
+          <div
+            className="relative"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
             <button
-              onMouseEnter={() => setDropdownOpen(true)}
               className={`group inline-flex items-center gap-1 text-sm font-medium transition ${
                 isSolutionsActive
                   ? 'text-primary underline decoration-accent underline-offset-4'
@@ -67,30 +70,33 @@ export default function Navbar() {
               Solutions
             </button>
             <div
-              className={`absolute left-0 top-full mt-4 hidden w-[32rem] rounded-3xl border border-slate-200 bg-white p-6 shadow-soft transition-opacity duration-200 md:block ${
-                dropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              className={`absolute left-0 top-full hidden w-[32rem] pt-4 md:block ${
+                dropdownOpen ? 'visible opacity-100' : 'invisible opacity-0'
               }`}
-              onMouseEnter={() => setDropdownOpen(true)}
             >
-              <div className="grid gap-4 sm:grid-cols-2">
-                {solutionLinks.map((solution) => {
-                  const Icon = solution.icon
-                  return (
-                    <Link
-                      key={solution.slug}
-                      to={`/solutions/${solution.slug}`}
-                      className="group flex items-start gap-3 rounded-3xl border border-slate-200 bg-slate-50 p-4 transition hover:border-accent hover:bg-white"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-accent/10 group-hover:text-accent">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-text">{solution.name}</p>
-                        <p className="text-sm text-muted">Explore the solution page</p>
-                      </div>
-                    </Link>
-                  )
-                })}
+              <div
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft transition-opacity duration-200"
+              >
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {solutionLinks.map((solution) => {
+                    const Icon = solution.icon
+                    return (
+                      <Link
+                        key={solution.slug}
+                        to={`/solutions/${solution.slug}`}
+                        className="group flex items-start gap-3 rounded-3xl border border-slate-200 bg-slate-50 p-4 transition hover:border-accent hover:bg-white"
+                      >
+                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-accent/10 group-hover:text-accent">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-text">{solution.name}</p>
+                          <p className="text-sm text-muted">Explore the solution page</p>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -136,8 +142,8 @@ export default function Navbar() {
         }`}
       >
         <div className="mb-8 flex items-center justify-between">
-          <Link to="/" className="text-lg font-semibold text-white">
-            Intellect Techcon Solutions
+          <Link to="/" className="flex items-center text-lg font-semibold text-white">
+            <img src={logo} alt="Intellect Techcon Solutions logo" className="h-16 w-auto rounded-xl border border-slate-500 bg-slate-900" />
           </Link>
           <button onClick={() => setIsOpen(false)} aria-label="Close menu">
             <X className="h-5 w-5 text-white" />
