@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a live demo of Intellect Techcon Solutions. Schedule a walkthrough with our solutions team.">
+  <title>Request a Demo | Intellect Techcon Solutions</title>
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== PARTICLE BACKGROUND ===== -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <!-- Logo - free, left -->
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions">
+      </a>
+    </div>
+    
+    <!-- Glass pill - center links only -->
+    <div class="nav-pill">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="demo.html">Request a Demo</a></li>
+      </ul>
+    </div>
+
+    <!-- Right side - Contact Us button & hamburger -->
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us →</a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="demo.html">Request a Demo</a></li>
+      <li><a href="contact.html" class="mobile-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero hero-short">
+  <div class="glow-blob glow-secondary" style="top: -5%; left: -5%; width: 400px; height: 400px;"></div>
+  
+  <div class="hero-content">
+    <span class="eyebrow">See It Live</span>
+    <h1>See It in Action.</h1>
+    <p class="sub-headline">
+      Schedule a live walkthrough with our solutions team. Discover how our platforms can transform your institution.
+    </p>
+  </div>
+</section>
+
+<!-- ===== DEMO REQUEST SECTION ===== -->
+<section class="section-padding-large">
+  <div class="container">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="fade-up">
+        <h2 style="text-align: center; margin-bottom: 0.5rem;">Schedule Your Demo</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">
+          Fill out the form below and we'll connect you with the right team member.
+        </p>
+      </div>
+
+      <form style="display: flex; flex-direction: column; gap: 1.5rem; fade-up" class="fade-up">
+        <div class="form-group">
+          <label for="demo-name">Full Name *</label>
+          <input type="text" id="demo-name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="demo-company">Company / Institution Name *</label>
+          <input type="text" id="demo-company" name="company" required>
+        </div>
+
+        <div class="form-group">
+          <label for="demo-email">Email Address *</label>
+          <input type="email" id="demo-email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="demo-phone">Phone Number *</label>
+          <input type="tel" id="demo-phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="demo-solution">Solution of Interest *</label>
+          <select id="demo-solution" name="solution" required>
+            <option value="">Select a Solution</option>
+            <option value="online-assessment">Online Assessment System</option>
+            <option value="proctoring">Proctoring Solution</option>
+            <option value="onscreen-marking">Onscreen Marking Solution</option>
+            <option value="iso-implementation">ISO Implementation & Consultancy</option>
+            <option value="cad-software">CAD Software</option>
+            <option value="econtent">eContent</option>
+            <option value="digital-inclusion">Digital Inclusion & Accessibility</option>
+            <option value="rfid-library">RFID for Library</option>
+            <option value="digital-repository">Digital Repository</option>
+            <option value="library-management">Library Management System</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="demo-message">What are you looking for? *</label>
+          <textarea id="demo-message" name="message" required style="min-height: 120px; placeholder='Tell us about your needs, goals, or timeline'"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Schedule Demo</button>
+
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+          No commitment. No pitch decks. Just a real conversation about your needs.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO SECTION ===== -->
+<section class="section-padding-large" style="background-color: var(--bg-surface); position: relative;">
+  <div class="glow-blob glow-primary" style="bottom: -10%; left: -5%; width: 500px; height: 500px;"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="text-center fade-up mb-3">
+      <h2>What to Expect from Your Demo</h2>
+    </div>
+
+    <div class="grid-3" style="margin-top: 2rem;">
+      <div class="card fade-up" style="padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Personalized Walkthrough</h3>
+        <p>A tailored demonstration focused on your specific use cases and institutional needs.</p>
+      </div>
+
+      <div class="card fade-up" style="padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Open Discussion</h3>
+        <p>Time to ask questions, discuss implementation details, and explore customization options.</p>
+      </div>
+
+      <div class="card fade-up" style="padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📋</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Next Steps</h3>
+        <p>We'll discuss timeline, investment, and how to move forward with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-section demo-cta-section">
+  <div class="container">
+    <div class="cta-card demo-cta-card fade-up">
+      <div class="cta-blob cta-blob--orange"></div>
+      <div class="cta-blob cta-blob--blue"></div>
+
+      <div class="cta-content demo-cta-content">
+        <h2>Questions Before Your Demo?</h2>
+        <p>Get in touch with our team anytime.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Brand column -->
+      <div>
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions" class="footer-logo">
+        <p class="footer-tagline">Technology built for institutions.
+Deployed for impact.</p>
+      </div>
+
+      <!-- Nav column 1 -->
+      <div class="footer-col">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="solutions.html">Solutions</a>
+      </div>
+
+      <!-- Nav column 2 -->
+      <div class="footer-col">
+        <a href="blog.html">Blog</a>
+        <a href="demo.html">Request a Demo</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer-col footer-contact">
+        <a href="tel:+971506930558">+971 50 6930558</a>
+        <a href="mailto:sales@intellecttechcon.com">sales@intellecttechcon.com</a>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">𝕳</a>
+          <a href="#" title="Twitter">𝕯</a>
+          <a href="#" title="Facebook">𝕱</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Intellect Techcon Solutions. All Rights Reserved.</span>
+      <span>P.O. Box 88878, Dubai, United Arab Emirates</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-effects.js"></script>
+</body>
+</html>

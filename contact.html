@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Intellect Techcon Solutions. Get in touch with our team to discuss your institution's technology and content needs.">
+  <title>Contact Us | Intellect Techcon Solutions</title>
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== PARTICLE BACKGROUND ===== -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <!-- Logo - free, left -->
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions">
+      </a>
+    </div>
+    
+    <!-- Glass pill - center links only -->
+    <div class="nav-pill">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="demo.html">Request a Demo</a></li>
+      </ul>
+    </div>
+
+    <!-- Right side - Contact Us button & hamburger -->
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us →</a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="demo.html">Request a Demo</a></li>
+      <li><a href="contact.html" class="mobile-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero hero-short">
+  <div class="glow-blob glow-primary" style="top: -5%; right: -5%; width: 400px; height: 400px;"></div>
+  
+  <div class="hero-content">
+    <span class="eyebrow">Get In Touch</span>
+    <h1>Let's Start a Conversation.</h1>
+    <p class="sub-headline">
+      Have questions about our solutions? Ready to transform your institution? We're here to help. Reach out today.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="section-padding-large">
+  <div class="container">
+    <div class="two-column">
+      <!-- Left: Contact Details -->
+      <div class="fade-up">
+        <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+        
+        <div style="margin-bottom: 2.5rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
+            <span style="font-size: 1.5rem;">📍</span>
+            <div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Address</h3>
+              <p style="color: var(--text-secondary);">
+                Intellect Techcon Solutions<br>
+                P.O. Box 88878<br>
+                Dubai, United Arab Emirates
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
+            <span style="font-size: 1.5rem;">📞</span>
+            <div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Phone</h3>
+              <p style="color: var(--text-secondary);">
+                <a href="tel:+97150693055" style="color: var(--primary); text-decoration: none;">+971 50 6930558</a>
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span style="font-size: 1.5rem;">📧</span>
+            <div>
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Email</h3>
+              <p style="color: var(--text-secondary);">
+                <a href="mailto:sales@intellecttechcon.com" style="color: var(--primary); text-decoration: none;">sales@intellecttechcon.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 2rem; background-color: var(--bg-surface); border-radius: 8px; border-left: 3px solid var(--primary);">
+          <h3 style="font-size: 1rem; margin-bottom: 1rem;">Response Time</h3>
+          <p style="color: var(--text-secondary);">
+            We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="fade-up">
+        <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="form-group">
+            <label for="contact-name">Full Name *</label>
+            <input type="text" id="contact-name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address *</label>
+            <input type="email" id="contact-email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Phone Number (Optional)</label>
+            <input type="tel" id="contact-phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message *</label>
+            <textarea id="contact-message" name="message" required style="min-height: 150px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          
+          <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+            We respect your privacy. Your information will only be used to respond to your inquiry.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-blob cta-blob--orange"></div>
+      <div class="cta-blob cta-blob--blue"></div>
+      
+      <div class="cta-content fade-up">
+        <h2>Your Institution Could Be Next</h2>
+        <p>Ready to Transform Your Institution?</p>
+        <p>Intellect Techcon is where bold technology meets real-world implementation - built for educators, built for scale.</p>
+        <div class="cta-actions">
+          <a href="demo.html" class="btn-primary">Request a Demo</a>
+          <a href="contact.html" class="btn-dark">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Brand column -->
+      <div>
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions" class="footer-logo">
+        <p class="footer-tagline">Technology built for institutions.
+Deployed for impact.</p>
+      </div>
+
+      <!-- Nav column 1 -->
+      <div class="footer-col">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="solutions.html">Solutions</a>
+      </div>
+
+      <!-- Nav column 2 -->
+      <div class="footer-col">
+        <a href="blog.html">Blog</a>
+        <a href="demo.html">Request a Demo</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer-col footer-contact">
+        <a href="tel:+971506930558">+971 50 6930558</a>
+        <a href="mailto:sales@intellecttechcon.com">sales@intellecttechcon.com</a>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">𝕳</a>
+          <a href="#" title="Twitter">𝕯</a>
+          <a href="#" title="Facebook">𝕱</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Intellect Techcon Solutions. All Rights Reserved.</span>
+      <span>P.O. Box 88878, Dubai, United Arab Emirates</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-effects.js"></script>
+</body>
+</html>

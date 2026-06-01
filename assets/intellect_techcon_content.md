@@ -1,4 +1,4 @@
-# Intellect Techcon Solutions — Full Website Content
+# Intellect Techcon Solutions - Full Website Content
 
 > This document contains all content scraped from intellecttechcon.com, structured page by page.
 > Use this to update the new Lovable-built website with real content.
@@ -39,7 +39,7 @@ Intellect Techcon Solutions, using its years of experience, works with users to 
 
 ---
 
-## SOLUTIONS — QUICK REFERENCE LIST
+## SOLUTIONS - QUICK REFERENCE LIST
 
 1. Online Assessment System
 2. Proctoring Solution
@@ -66,7 +66,7 @@ Intellect Techcon Solutions, using its years of experience, works with users to 
 **Main Description:**
 AI Driven Online Exam Platform to automate objective, subjective assessments powered with intelligent proctoring and analytics. The platform is useful to conduct exams where the candidate is supposed to type answers for theory-based questions. Our platform supports theory-based exams with an answer-checking facility available for the examiner.
 
-Define the Viva exam online — candidates can use their mobile and microphone to appear for the online exam. Question text associated with the viva is displayed on screen where the candidate can speak their answer. The entire speech is recorded in the system. The examiner is provided a login to listen to the audio and evaluate/assign marks for each individual answer attempted by the candidate.
+Define the Viva exam online - candidates can use their mobile and microphone to appear for the online exam. Question text associated with the viva is displayed on screen where the candidate can speak their answer. The entire speech is recorded in the system. The examiner is provided a login to listen to the audio and evaluate/assign marks for each individual answer attempted by the candidate.
 
 **Use Cases / Exam Types:**
 - Aptitude Test
@@ -86,7 +86,7 @@ Define the Viva exam online — candidates can use their mobile and microphone t
 **Meta Description:** Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention.
 
 **Main Description:**
-Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention. Scale your assessment operations to eliminate exam centre infrastructure. Remote Proctoring and auto image capturing technology help simplify the exam invigilation process. Many training and certification institutes are using it successfully. Using Remote Proctoring, organisations can conduct an exam of any scale. Candidates sitting at any location can be tracked using remote proctoring — candidates do not need to visit a specific location or exam centre.
+Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention. Scale your assessment operations to eliminate exam centre infrastructure. Remote Proctoring and auto image capturing technology help simplify the exam invigilation process. Many training and certification institutes are using it successfully. Using Remote Proctoring, organisations can conduct an exam of any scale. Candidates sitting at any location can be tracked using remote proctoring - candidates do not need to visit a specific location or exam centre.
 
 **Key Features:**
 - Useful to manage online exams happening across multiple cities
@@ -193,7 +193,7 @@ Solution for digitally transforming schools, colleges, universities, libraries a
 **Main Description:**
 RFID technology is a wireless communication technology that uses radio waves to identify and track objects. In libraries, RFID tags are embedded in library materials such as books, CDs and DVDs, and these tags can be read and programmed by RFID readers located in the library. Each RFID tag contains a unique identifier, effectively acting as a digital fingerprint for the associated item. This identifier is instrumental in tracking the material's location, circulation status, and other pertinent details. The RFID Library Management System utilises this advanced technology to optimise library operations comprehensively.
 
-Libraries around the world are embracing the power of RFID technology, transforming the way users interact with books and information. With RFID tags embedded in each book, libraries now offer a seamless and efficient borrowing experience. Library patrons can simply wave their books at self-service kiosks, instantly updating their accounts — saving time and ensuring accurate inventory management.
+Libraries around the world are embracing the power of RFID technology, transforming the way users interact with books and information. With RFID tags embedded in each book, libraries now offer a seamless and efficient borrowing experience. Library patrons can simply wave their books at self-service kiosks, instantly updating their accounts - saving time and ensuring accurate inventory management.
 
 **Tagline:** Step into the future of library services with RFID and enjoy a new level of convenience in operations.
 
@@ -245,7 +245,7 @@ DSpace is constructed with Java web applications, multiple programs and an assoc
 ### 10. Library Management System
 
 **Page URL:** /library-management-system/
-**Meta Description:** Koha open-source integrated library system (ILS) used worldwide by public, school, special and academic libraries — fully featured and scalable.
+**Meta Description:** Koha open-source integrated library system (ILS) used worldwide by public, school, special and academic libraries - fully featured and scalable.
 
 **Main Description:**
 Koha is an open-source integrated library system (ILS), used worldwide by public, school and special libraries, as well as larger academic libraries. Koha is a fully featured, scalable library management system. Development is sponsored by libraries of varying types and sizes, volunteers, and support companies worldwide.
@@ -270,8 +270,8 @@ Koha is a web-based ILS with a SQL database (MariaDB or MySQL) back end, with ca
 - **Full-featured ILS:** Comprehensive functionality including acquisitions, circulation, cataloguing, serials management, authorities, flexible reporting, label printing, multi-format notices, and offline circulation. Works for consortia of all sizes, multi-branch, and single-branch libraries.
 - **Multilingual and translatable:** Large number of available languages, with more added every year.
 - **Full-text searching:** Powerful searching with enhanced catalogue display that can use content from Amazon, Google, LibraryThing, Open Library, and Syndetics.
-- **Library Standards Compliant:** Built using library standards and protocols including MARC 21, UNIMARC, Z39.50, SRU/SW, SIP2, SIP/NCIP — ensuring interoperability with other systems and technologies.
-- **Web-based Interfaces:** OPAC, circulation, management and self-checkout interfaces are all based on standards-compliant web technologies — XHTML, CSS and JavaScript — making Koha a truly platform-independent solution.
+- **Library Standards Compliant:** Built using library standards and protocols including MARC 21, UNIMARC, Z39.50, SRU/SW, SIP2, SIP/NCIP - ensuring interoperability with other systems and technologies.
+- **Web-based Interfaces:** OPAC, circulation, management and self-checkout interfaces are all based on standards-compliant web technologies - XHTML, CSS and JavaScript - making Koha a truly platform-independent solution.
 
 **CTA:** Click for Presentation
 

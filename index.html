@@ -1,23 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intellect Techcon Solutions</title>
-    <meta
-      name="description"
-      content="Intellect Techcon Solutions provides affordable, secure, and scalable AI-proctored online assessments, eBooks, eJournals, CAD software, and ISO solutions for academic, government, and corporate sectors."
-    />
-    <link rel="icon" type="image/png" href="/assets/logo1.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-bg text-text">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Intellect Techcon Solutions provides affordable, secure, and scalable AI-proctored online assessments, eBooks, eJournals, CAD software, and ISO solutions for academic, government, and corporate sectors.">
+  <title>Intellect Techcon Solutions | Technology & Content Provider</title>
+  <link rel="icon" type="image/png" href="assets/logo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== PARTICLE BACKGROUND ===== -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <!-- Logo - free, left -->
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions">
+      </a>
+    </div>
+    
+    <!-- Glass pill - center links only -->
+    <div class="nav-pill">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="demo.html">Request a Demo</a></li>
+      </ul>
+    </div>
+
+    <!-- Right side - Contact Us button & hamburger -->
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us →</a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="demo.html">Request a Demo</a></li>
+      <li><a href="contact.html" class="mobile-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="noise-overlay"></div>
+  <div class="glow-blob glow-primary" style="top: -10%; right: -5%; width: 600px; height: 600px;"></div>
+  <div class="glow-blob glow-secondary" style="bottom: -15%; left: -10%; width: 500px; height: 500px;"></div>
+  
+  <div class="hero-content">
+    <span class="eyebrow">Technology and Content Provider</span>
+    <h1>Where Intelligence Meets Infrastructure.</h1>
+    <p class="sub-headline">
+      Empower your institution with AI-driven assessments, secure digital repositories, and scalable content solutions. Trusted by 100+ organizations across the globe.
+    </p>
+    <div class="hero-cta">
+      <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
+      <a href="demo.html" class="btn btn-ghost">Request a Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE / TICKER STRIP ===== -->
+<section class="marquee-section">
+  <div class="marquee">
+    <div class="marquee-item">Online Assessment System</div>
+    <div class="marquee-item">Proctoring Solution</div>
+    <div class="marquee-item">Onscreen Marking</div>
+    <div class="marquee-item">ISO Implementation</div>
+    <div class="marquee-item">CAD Software</div>
+    <div class="marquee-item">eContent</div>
+    <div class="marquee-item">Digital Inclusion</div>
+    <div class="marquee-item">RFID for Library</div>
+    <div class="marquee-item">Digital Repository</div>
+    <div class="marquee-item">Library Management</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item">Online Assessment System</div>
+    <div class="marquee-item">Proctoring Solution</div>
+    <div class="marquee-item">Onscreen Marking</div>
+    <div class="marquee-item">ISO Implementation</div>
+    <div class="marquee-item">CAD Software</div>
+    <div class="marquee-item">eContent</div>
+    <div class="marquee-item">Digital Inclusion</div>
+    <div class="marquee-item">RFID for Library</div>
+    <div class="marquee-item">Digital Repository</div>
+    <div class="marquee-item">Library Management</div>
+  </div>
+</section>
+
+<!-- ===== WHAT WE DO (SERVICES) ===== -->
+<section id="services" class="section-padding-large">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="eyebrow">What We Do</span>
+      <h2>Built for Institutions. Engineered for Scale.</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1: Assessment & Proctoring -->
+      <div class="service-card fade-up">
+        <svg class="service-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 3L25 8V14C25 20.6274 18 26 18 26C18 26 11 20.6274 11 14V8L18 3Z"/>
+          <circle cx="18" cy="13" r="2" fill="currentColor"/>
+        </svg>
+        <h3>Assessment & Proctoring</h3>
+        <p>AI-driven exam platforms with intelligent proctoring to secure and scale your assessment operations.</p>
+      </div>
+
+      <!-- Service 2: Library & Content -->
+      <div class="service-card fade-up">
+        <svg class="service-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 6H26C26.5523 6 27 6.44772 27 7V28C27 28.5523 26.5523 29 26 29H10C9.44772 29 9 28.5523 9 28V7C9 6.44772 9.44772 6 10 6Z"/>
+          <line x1="12" y1="9" x2="24" y2="9"/>
+          <line x1="12" y1="13" x2="24" y2="13"/>
+          <line x1="12" y1="17" x2="24" y2="17"/>
+          <line x1="12" y1="21" x2="20" y2="21"/>
+        </svg>
+        <h3>Library & Content</h3>
+        <p>Modern library systems with RFID, digital repositories, and comprehensive eContent delivery solutions.</p>
+      </div>
+
+      <!-- Service 3: Digital Transformation -->
+      <div class="service-card fade-up">
+        <svg class="service-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="18" r="12"/>
+          <path d="M18 10V26M10 18H26M22.5 13.5L13.5 22.5M13.5 13.5L22.5 22.5"/>
+        </svg>
+        <h3>Digital Transformation</h3>
+        <p>ISO consulting, CAD software, digital inclusion tools, and accessibility solutions for modern institutions.</p>
+      </div>
+
+      <!-- Service 4: Additional Services -->
+      <div class="service-card fade-up">
+        <svg class="service-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18C9 13.5817 12.5817 10 17 10C21.4183 10 25 13.5817 25 18C25 22.4183 21.4183 26 17 26C12.5817 26 9 22.4183 9 18Z"/>
+          <path d="M17 14V22M13 18H21"/>
+        </svg>
+        <h3>Scalable Infrastructure</h3>
+        <p>Enterprise-grade systems designed to grow with your institution from 100 to 100,000+ users.</p>
+      </div>
+    </div>
+
+    <!-- CTA Strip -->
+    <div class="services-cta-strip">
+      <p>Got a bold idea? We'll make it real.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED SOLUTIONS OVERRIDE ===== -->
+<section id="solutions" class="solutions-featured">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Our Solutions</span>
+      <h2>Platforms That Run<br>the Future.</h2>
+      <p class="section-subtitle">
+        Purpose-built technology for assessment, integrity, and institutional scale.
+      </p>
+    </div>
+
+    <div class="solution-card-row fade-up">
+      <div class="solution-card-text">
+        <div class="solution-blob"></div>
+        <h3>Online Assessment System</h3>
+        <p>AI Driven Online Exam Platform to automate objective and subjective assessments powered with intelligent proctoring and analytics.</p>
+        <a href="solutions.html" class="btn-ghost">→ Learn More</a>
+      </div>
+      <div class="solution-card-visual">
+        <div class="mockup-frame">
+          <div class="mockup-topbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-screen">
+            <div class="mockup-label">Online Assessment System</div>
+            <div class="mockup-panels">
+              <div class="panel panel--wide"></div>
+              <div class="panel panel--tall"></div>
+              <div class="panel panel--small"></div>
+              <div class="panel panel--small"></div>
+              <div class="panel panel--chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-card-row solution-card-row--reverse fade-up">
+      <div class="solution-card-text">
+        <div class="solution-blob"></div>
+        <h3>Proctoring Solution</h3>
+        <p>Manage Remote Assessments with Proctoring Services, AI-Driven Exam Security, and Malpractice Prevention.</p>
+        <a href="solutions.html" class="btn-ghost">→ Learn More</a>
+      </div>
+      <div class="solution-card-visual">
+        <div class="mockup-frame">
+          <div class="mockup-topbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-screen">
+            <div class="mockup-label">Proctoring Solution</div>
+            <div class="mockup-panels">
+              <div class="panel panel--grid"></div>
+              <div class="panel panel--wide"></div>
+              <div class="panel panel--bar"></div>
+              <div class="panel panel--small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-card-row fade-up">
+      <div class="solution-card-text">
+        <div class="solution-blob"></div>
+        <h3>Onscreen Marking Solution</h3>
+        <p>Onscreen Marking to evaluate answer sheets digitally and simplify moderation with accelerated result processing.</p>
+        <a href="solutions.html" class="btn-ghost">→ Learn More</a>
+      </div>
+      <div class="solution-card-visual">
+        <div class="mockup-frame">
+          <div class="mockup-topbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-screen">
+            <div class="mockup-label">Onscreen Marking Solution</div>
+            <div class="mockup-panels">
+              <div class="panel panel--tall"></div>
+              <div class="panel panel--chart"></div>
+              <div class="panel panel--wide"></div>
+              <div class="panel panel--small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solutions-more fade-up">
+      <a href="solutions.html" class="btn-see-more">→ See More Solutions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US (VALUE PILLARS) ===== -->
+<section class="section-padding-large">
+  <div class="container">
+    <div class="text-center fade-up mb-3">
+      <h2>Why 100+ Institutions Choose Us.</h2>
+    </div>
+
+    <div class="grid-4" style="margin-top: 2rem;">
+      <div class="value-pillar fade-up" style="position: relative;">
+        <div class="grid-overlay"></div>
+        <h3>Proven Expertise</h3>
+        <p>Years of experience delivering reliable technology and content solutions across academic, government, and corporate sectors.</p>
+      </div>
+
+      <div class="value-pillar fade-up" style="position: relative;">
+        <div class="grid-overlay"></div>
+        <h3>Affordable & Scalable</h3>
+        <p>Solutions designed to grow with your institution while maintaining cost-effectiveness and operational efficiency.</p>
+      </div>
+
+      <div class="value-pillar fade-up" style="position: relative;">
+        <div class="grid-overlay"></div>
+        <h3>Security First</h3>
+        <p>Enterprise-grade security with AI-driven monitoring, encryption, and patented technologies to protect your data.</p>
+      </div>
+
+      <div class="value-pillar fade-up" style="position: relative;">
+        <div class="grid-overlay"></div>
+        <h3>Client-Centric Support</h3>
+        <p>Customized services and dedicated support teams committed to understanding and exceeding your unique institutional needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ SECTION ===== -->
+<section class="section-padding-large" style="background-color: var(--bg-surface);">
+  <div class="container">
+    <div class="text-center fade-up mb-3">
+      <span class="eyebrow">FAQs</span>
+      <h3>Got Questions?</h3>
+      <h2>We Have Answers.</h2>
+    </div>
+
+    <ul class="accordion" style="max-width: 800px; margin: 3rem auto 0;">
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          What is AI-Proctoring and how does it work?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            AI-Proctoring uses artificial intelligence to monitor exams in real-time, detecting unusual behavior and preventing malpractices. Our system can identify cheating through video analysis, face recognition, and intelligent activity monitoring - allowing you to conduct secure assessments at scale without physical invigilators.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          Can your solutions integrate with existing systems?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            Yes. Our platforms support standard protocols including SIP2, NCIP, Z39.50, and SRU/SW. Our technical team works with you to ensure seamless integration with your current infrastructure, databases, and workflows.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          What is the implementation timeline?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            Implementation timelines vary based on your specific needs and system complexity. Typically, basic deployments take 2-4 weeks, while comprehensive implementations may require 2-3 months. Our team will provide a detailed project plan during the discovery phase.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          How do you ensure data security and compliance?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            We employ enterprise-grade security measures including SSL encryption, regular security audits, and ISO 27001 compliance. Our systems are designed to protect student data and institutional records according to international standards and regional regulations.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          Are your solutions available for schools and universities?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            Yes. Our solutions are designed for academic institutions of all sizes - from K-12 schools to large universities. We also serve corporate training programs and government agencies. Each implementation is customized to meet sector-specific requirements.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          What kind of support do you provide after deployment?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            We provide comprehensive post-deployment support including technical assistance, staff training, system monitoring, and regular updates. Our support team is available to address issues, optimize performance, and help you get the most from your solutions.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          Can I conduct live virtual exams?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            Yes. Our Viva exam module allows candidates to appear for live assessments using their mobile devices and microphones. Examiners receive audio recordings and can evaluate answers remotely, making it ideal for oral exams and interviews at scale.
+          </div>
+        </div>
+      </li>
+
+      <li class="accordion-item fade-up">
+        <button class="accordion-trigger">
+          Based in Dubai - do you serve international clients?
+          <span class="accordion-toggle">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            Yes. We serve institutions across the Middle East, Asia, Africa, and beyond. Our Dubai headquarters provides excellent connectivity and our team has extensive experience working with international organizations across multiple time zones and regulatory environments.
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-blob cta-blob--orange"></div>
+      <div class="cta-blob cta-blob--blue"></div>
+      
+      <div class="cta-content fade-up">
+        <h2>Your Institution Could Be Next</h2>
+        <p>Ready to Transform Your Institution?</p>
+        <p>Intellect Techcon is where bold technology meets real-world implementation - built for educators, built for scale.</p>
+        <div class="cta-actions">
+          <a href="demo.html" class="btn-primary">Request a Demo</a>
+          <a href="contact.html" class="btn-dark">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Brand column -->
+      <div>
+        <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions" class="footer-logo">
+        <p class="footer-tagline">Technology built for institutions.
+Deployed for impact.</p>
+      </div>
+
+      <!-- Nav column 1 -->
+      <div class="footer-col">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="solutions.html">Solutions</a>
+      </div>
+
+      <!-- Nav column 2 -->
+      <div class="footer-col">
+        <a href="blog.html">Blog</a>
+        <a href="demo.html">Request a Demo</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer-col footer-contact">
+        <a href="tel:+971506930558">+971 50 6930558</a>
+        <a href="mailto:sales@intellecttechcon.com">sales@intellecttechcon.com</a>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">𝕳</a>
+          <a href="#" title="Twitter">𝕯</a>
+          <a href="#" title="Facebook">𝕱</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Intellect Techcon Solutions. All Rights Reserved.</span>
+      <span>P.O. Box 88878, Dubai, United Arab Emirates</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-effects.js"></script>
+</body>
 </html>
