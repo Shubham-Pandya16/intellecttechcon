@@ -1,335 +1,255 @@
-/* ============================================================================
-   Solutions Page - CSS Honeycomb Sphere Grid (Frosted Glass)
-   ============================================================================ */
-
-:root {
-  --sphere-size: 80px;
-  --sphere-gap: 8px;
-  --row-shift: 44px; /* (sphere-size + sphere-gap) / 2 */
-  --row-pull: -11px; /* sphere-size * 0.134 */
-}
-
-.solutions-page {
-  overflow-x: hidden;
-  background: var(--bg-base);
-}
-
-.solutions-page main {
-  min-height: 100vh;
-}
-
-/* ============================================================
-   SPHERE UNIVERSE — full viewport wrapper
-   ============================================================ */
-.sphere-universe {
+/* ══════════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════════ */
+.hero-section {
   position: relative;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
   overflow: hidden;
-  background: var(--bg-base);
-  /* Atmospheric gradient behind spheres */
-  background-image:
-    radial-gradient(
-      ellipse 60% 50% at 20% 80%,
-      rgba(234, 102, 36, 0.14) 0%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 50% 40% at 80% 20%,
-      rgba(50, 91, 170, 0.1) 0%,
-      transparent 70%
-    );
-}
-
-/* ============================================================
-   SPHERE GRID
-   ============================================================ */
-.sphere-grid {
-  position: absolute;
-  inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  pointer-events: none;
 }
 
-/* Each row is a flex row of spheres */
-.sphere-row {
-  display: flex;
-  align-items: center;
-  margin-top: var(--row-pull);
-  pointer-events: none;
-}
-
-/* Odd rows shift right for honeycomb stagger */
-.sphere-row--odd {
-  margin-left: var(--row-shift);
-}
-
-/* ============================================================
-   INDIVIDUAL SPHERE
-   ============================================================ */
-.sphere {
-  /* Size */
-  width: var(--sphere-size);
-  height: var(--sphere-size);
+/* Atmospheric blobs */
+.atmo-blob {
+  position: absolute;
   border-radius: 50%;
-  margin: 0 calc(var(--sphere-gap) / 2);
-  flex-shrink: 0;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(120px);
+}
 
-  /* Glass effect — same language as navbar pill */
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.atmo-blob--orange {
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse,
+    rgba(234, 102, 36, 0.2) 0%,
+    transparent 70%
+  );
+  bottom: -100px;
+  left: -80px;
+}
 
-  /* Specular highlight — top-left inner glow
-     simulates light source above-left */
-  box-shadow:
-    inset 2px 3px 8px rgba(255, 255, 255, 0.12),
-    inset -1px -2px 6px rgba(0, 0, 0, 0.4),
-    0 2px 12px rgba(0, 0, 0, 0.3);
+.atmo-blob--blue {
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse,
+    rgba(50, 91, 170, 0.15) 0%,
+    transparent 70%
+  );
+  top: -60px;
+  right: -60px;
+}
 
-  /* Interaction */
-  cursor: pointer;
-  pointer-events: all;
+/* Hero content centered */
+.hero-content {
   position: relative;
-  z-index: 1;
-
-  /* Smooth everything */
-  transition:
-    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-    background 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease,
-    margin 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Subtle breathe animation at rest */
-  animation: sphere-breathe 4s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.08s);
-}
-
-/* Stagger breathe using CSS custom property --i set by JS */
-@keyframes sphere-breathe {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.025); }
-}
-
-/* ── Orange variant ── */
-.sphere--orange {
-  background: rgba(234, 102, 36, 0.08);
-  border-color: rgba(234, 102, 36, 0.18);
-  box-shadow:
-    inset 2px 3px 10px rgba(255, 200, 150, 0.15),
-    inset -1px -2px 6px rgba(0, 0, 0, 0.5),
-    0 2px 16px rgba(234, 102, 36, 0.1);
-}
-
-/* ── Blue variant ── */
-.sphere--blue {
-  background: rgba(50, 91, 170, 0.08);
-  border-color: rgba(50, 91, 170, 0.18);
-  box-shadow:
-    inset 2px 3px 10px rgba(150, 180, 255, 0.15),
-    inset -1px -2px 6px rgba(0, 0, 0, 0.5),
-    0 2px 16px rgba(50, 91, 170, 0.1);
-}
-
-/* ============================================================
-   HOVERED STATE
-   Sphere expands, pushes neighbors, glass intensifies
-   ============================================================ */
-.sphere:hover {
-  transform: scale(1.9);
-  z-index: 100;
-
-  /* Stop breathe animation on hover */
-  animation: none;
-
-  /* Glass intensifies — more opacity, stronger highlight */
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow:
-    inset 3px 5px 16px rgba(255, 255, 255, 0.25),
-    inset -2px -3px 10px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 12px 40px rgba(0, 0, 0, 0.5);
-}
-
-/* Orange hover intensified */
-.sphere--orange:hover {
-  background: rgba(234, 102, 36, 0.18);
-  border-color: rgba(234, 102, 36, 0.45);
-  box-shadow:
-    inset 3px 5px 18px rgba(255, 180, 100, 0.3),
-    inset -2px -3px 10px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(234, 102, 36, 0.2),
-    0 8px 32px rgba(234, 102, 36, 0.25),
-    0 16px 48px rgba(0, 0, 0, 0.4);
-}
-
-/* Blue hover intensified */
-.sphere--blue:hover {
-  background: rgba(50, 91, 170, 0.18);
-  border-color: rgba(50, 91, 170, 0.45);
-  box-shadow:
-    inset 3px 5px 18px rgba(150, 190, 255, 0.3),
-    inset -2px -3px 10px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(50, 91, 170, 0.2),
-    0 8px 32px rgba(50, 91, 170, 0.25),
-    0 16px 48px rgba(0, 0, 0, 0.4);
-}
-
-/* ── Neighbors shrink when a sibling is hovered ── */
-.sphere--pushed {
-  transform: scale(0.88);
-  animation: none;
-}
-
-/* ============================================================
-   IN-SPHERE TEXT LABEL
-   Fades in centered inside the expanded sphere
-   ============================================================ */
-.sphere-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 8px;
-  opacity: 0;
-  transform: scale(0.7);
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  pointer-events: none;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.sphere:hover .sphere-text {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.sphere-text-tag {
-  font-family: var(--font-body);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 3px;
-  white-space: normal;
-  max-width: 90%;
-}
-
-.sphere-text-name {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.25;
-  white-space: normal;
-  max-width: 90%;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-/* ============================================================
-   HERO TEXT — centered over the empty console area
-   ============================================================ */
-.sphere-hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 50;
+  z-index: 10;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
-  background: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  padding: 0;
-  pointer-events: none;
-  max-width: 580px;
-  width: 90vw;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 560px;
+  padding: 0 24px;
 }
 
-.sphere-hero-text h1 {
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
+.hero-content h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
   letter-spacing: -0.03em;
   line-height: 1.08;
   margin: 0;
-  color: #ffffff;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.sphere-hero-text .eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--primary);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.sphere-hero-text .section-subtitle {
-  font-size: 1.02rem;
-  color: rgba(255, 255, 255, 0.65);
+.hero-content .section-subtitle {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.95rem;
   margin: 0;
-  line-height: 1.7;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* ============================================================
+/* ══════════════════════════════════════════
+   SOLUTIONS GRID SECTION
+══════════════════════════════════════════ */
+.solutions-grid-section {
+  padding: 120px 0 100px;
+  background: var(--bg-base);
+  position: relative;
+}
+
+/* Subtle top separator glow */
+.solutions-grid-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(234,102,36,0.4),
+    transparent
+  );
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* ══════════════════════════════════════════
+   SOLUTION CARD
+══════════════════════════════════════════ */
+.sol-card {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Subtle top-left corner glow on hover */
+.sol-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    ellipse,
+    rgba(234,102,36,0.12) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.sol-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(234,102,36,0.22);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(234,102,36,0.08);
+}
+
+.sol-card:hover::before {
+  opacity: 1;
+}
+
+/* Card top row — tag + icon */
+.sol-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sol-tag {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+.sol-icon {
+  width: 36px;
+  height: 36px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sol-card:hover .sol-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.sol-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Card heading */
+.sol-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Card description */
+.sol-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+
+/* Learn More link */
+.sol-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  margin-top: auto;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+  width: fit-content;
+}
+
+.sol-learn:hover {
+  gap: 10px;
+  opacity: 0.85;
+}
+
+/* ══════════════════════════════════════════
    RESPONSIVE
-   ============================================================ */
-@media (max-width: 768px) {
-  :root {
-    --sphere-size: 56px;
-    --sphere-gap: 6px;
-    --row-shift: 31px;
-    --row-pull: -8px;
-  }
-
-  .sphere:hover {
-    transform: scale(1.75);
-  }
-
-  .sphere-text-tag {
-    font-size: 6px;
-    margin-bottom: 2px;
-  }
-
-  .sphere-text-name {
-    font-size: 7px;
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  :root {
-    --sphere-size: 42px;
-    --sphere-gap: 4px;
-    --row-shift: 23px;
-    --row-pull: -6px;
+@media (max-width: 640px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
   }
 
-  .sphere:hover {
-    transform: scale(1.6);
-  }
-
-  .sphere-text-tag {
-    font-size: 5px;
-  }
-
-  .sphere-text-name {
-    font-size: 6px;
+  .hero-section {
+    height: 100svh;
   }
 }
