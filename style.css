@@ -316,7 +316,7 @@ label {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -331,7 +331,7 @@ label {
 
 /* Scroll state - pill darkens slightly */
 .navbar.scrolled .nav-pill {
-  background: rgba(10, 10, 10, 0.72);
+  background: rgba(10, 10, 10, 0.3);
   border-color: rgba(255, 255, 255, 0.14);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
@@ -446,7 +446,7 @@ label {
   -webkit-backdrop-filter: blur(6px);
   transition: transform 120ms cubic-bezier(.2,.9,.2,1), width 120ms ease, height 120ms ease, opacity 120ms ease;
   z-index: 99999;
-  opacity: 1;
+  opacity: 0;
 }
 
 .glass-cursor::after {
