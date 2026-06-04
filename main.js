@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollReveal();
   initAccordion();
   initFormHandling();
-  initGlassCursor();
+  initInvertedCursor();
 });
 
 /* ============================================================================
@@ -155,16 +155,16 @@ function initFormHandling() {
 // Smooth scroll is handled by CSS: html { scroll-behavior: smooth; }
 
 /* ============================================================================
-   GLASS CURSOR - small frosted circular cursor
+   INVERTED CURSOR - circular cursor that inverts underlying colour
    ============================================================================ */
 
-function initGlassCursor() {
+function initInvertedCursor() {
   // Do not initialize on touch or reduced-motion preferences
   if (window.matchMedia('(hover: none)').matches || ('ontouchstart' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const cursor = document.createElement('div');
-  cursor.className = 'glass-cursor';
+  cursor.className = 'invert-cursor';
   document.body.appendChild(cursor);
 
   let mouseX = window.innerWidth / 2;
@@ -176,7 +176,6 @@ function initGlassCursor() {
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    // ensure visible
     cursor.style.opacity = '1';
   });
 
@@ -188,14 +187,12 @@ function initGlassCursor() {
   }
   requestAnimationFrame(render);
 
-  // Hover interactions for interactive elements
   const hoverSelector = 'a, button, .btn, input, textarea, select, .hamburger, .nav-cta, .nav-links a, .link-text';
   document.querySelectorAll(hoverSelector).forEach(el => {
     el.addEventListener('pointerenter', () => cursor.classList.add('hover'));
     el.addEventListener('pointerleave', () => cursor.classList.remove('hover'));
   });
 
-  // Hide when leaving the window
   document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
   document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
 }

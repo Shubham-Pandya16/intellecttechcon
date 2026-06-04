@@ -180,7 +180,6 @@ label {
   font-size: 0.95rem;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
   white-space: nowrap;
@@ -197,7 +196,6 @@ label {
   border-radius: 100px;
   text-decoration: none;
   border: none;
-  cursor: pointer;
   transition: opacity 0.2s ease, transform 0.2s ease;
   /* No glow. No box-shadow. Clean pill only. */
 }
@@ -215,7 +213,6 @@ label {
   padding: 13px 28px;
   border-radius: 100px;
   text-decoration: none;
-  cursor: pointer;
   letter-spacing: -0.01em;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   backdrop-filter: blur(8px);
@@ -255,7 +252,6 @@ label {
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-decoration: none;
-  cursor: pointer;
   letter-spacing: 0.01em;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -406,7 +402,6 @@ label {
   gap: 5px;
   background: none;
   border: none;
-  cursor: pointer;
   padding: 6px;
 }
 
@@ -430,8 +425,8 @@ label {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Glass cursor */
-.glass-cursor {
+/* Inverted cursor */
+.invert-cursor {
   position: fixed;
   top: 0;
   left: 0;
@@ -440,29 +435,29 @@ label {
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  background: rgba(180, 180, 180, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform 120ms cubic-bezier(.2,.9,.2,1), width 120ms ease, height 120ms ease, opacity 120ms ease;
+  background: white;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+  transition: transform 120ms cubic-bezier(.2,.9,.2,1), width 120ms ease, height 120ms ease, opacity 120ms ease, box-shadow 120ms ease;
   z-index: 99999;
   opacity: 0;
 }
 
-.glass-cursor::after {
+.invert-cursor::after {
   content: '';
   position: absolute;
-  inset: -4px;
+  inset: -5px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   pointer-events: none;
+  mix-blend-mode: difference;
 }
 
-.glass-cursor.hover {
-  transform: translate(-50%, -50%) scale(1.6);
-  width: 28px;
-  height: 28px;
-  background: rgba(180, 180, 180, 0.24);
+.invert-cursor.hover {
+  transform: translate(-50%, -50%) scale(1.7);
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.65);
 }
 
 /* Hide native cursor on devices that support fine pointers */
@@ -482,14 +477,14 @@ label {
   }
 }
 
-/* Hide glass cursor on touch devices */
+/* Hide custom cursor on touch devices */
 @media (hover: none) {
-  .glass-cursor { display: none !important; }
+  .invert-cursor { display: none !important; }
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .glass-cursor { transition: none; }
+  .invert-cursor { transition: none; }
 }
 
 /* Mobile breakpoint */
@@ -1093,7 +1088,6 @@ label {
   border-radius: 12px;
   text-decoration: none;
   border: none;
-  cursor: pointer;
   letter-spacing: 0.01em;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -2024,7 +2018,6 @@ section {
 }
 
 .form-group select {
-  cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ea6624' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -2064,7 +2057,6 @@ section {
   padding: 1.5rem;
   background: none;
   border: none;
-  cursor: pointer;
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
