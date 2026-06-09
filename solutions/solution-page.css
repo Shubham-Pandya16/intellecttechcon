@@ -38,13 +38,62 @@
   right: -60px;
 }
 
+/* ── Solution page hero ── */
 .sol-page-hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+  display: flex;
+  flex-direction: row;          /* was: column */
+  align-items: center;
+  gap: 60px;
+  max-width: unset;             /* was: 780px — let it span full container */
+}
+
+/* Left column: text stack */
+.sol-page-hero-text {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+/* Right column: image */
+.sol-page-hero-visual {
+  flex: 0 0 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sol-hero-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(234, 102, 36, 0.15),
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(234, 102, 36, 0.08);
+  object-fit: cover;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .sol-page-hero-inner {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .sol-page-hero-visual {
+    flex: unset;
+    width: 100%;
+  }
+
+  .sol-hero-img {
+    max-width: 100%;
+  }
 }
 
 /* Breadcrumb */
