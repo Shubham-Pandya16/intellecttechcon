@@ -13,6 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +28,7 @@
       <!-- Logo - free, left -->
       <div class="nav-logo">
         <a href="index.html">
-          <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions">
+          <img src="assets/logo_intellecttechcon.jpg" alt="Intellect Techcon Solutions">
         </a>
       </div>
 
@@ -122,30 +123,25 @@
           </div>
 
           <div class="form-group">
-            <label for="demo-solution">Solution of Interest *</label>
-            <select id="demo-solution" name="solution" required>
-              <option value="">Select a Solution</option>
-              <option value="online-assessment">Online Assessment System</option>
-              <option value="proctoring">Proctoring Solution</option>
-              <option value="onscreen-marking">Onscreen Marking Solution</option>
-              <option value="iso-implementation">ISO Implementation & Consultancy</option>
-              <option value="cad-software">CAD Software</option>
-              <option value="econtent">eContent</option>
-              <option value="digital-inclusion">Digital Inclusion & Accessibility</option>
-              <option value="rfid-library">RFID for Library</option>
-              <option value="digital-repository">Digital Repository</option>
-              <option value="library-management">Library Management System</option>
+            <label for="demo-solution">Solution(s) of Interest *</label>
+
+            <select id="demo-solution" name="solution[]" multiple required>
+              <option value="Online Assessment System">Online Assessment System</option>
+              <option value="Proctoring Solution">Proctoring Solution</option>
+              <option value="Onscreen Marking Solution">Onscreen Marking Solution</option>
+              <option value="ISO Implementation & Consultancy">ISO Implementation & Consultancy</option>
+              <option value="CAD Software">CAD Software</option>
+              <option value="eContent">eContent</option>
+              <option value="Digital Inclusion & Accessibility">Digital Inclusion & Accessibility</option>
+              <option value="RFID for Library">RFID for Library</option>
+              <option value="Digital Repository">Digital Repository</option>
+              <option value="Library Management System">Library Management System</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="demo-message">What are you looking for? *</label>
-            <textarea
-  id="demo-message"
-  name="message"
-  required
-  placeholder="Tell us about your needs, goals, or timeline"
-  style="min-height: 120px;">
+            <textarea id="demo-message" name="message" required
+              placeholder="Tell us about your needs, goals, or timeline" style="min-height: 120px;">
 </textarea>
           </div>
 
@@ -215,7 +211,7 @@
       <div class="footer-inner">
         <!-- Brand column -->
         <div>
-          <img src="assets/intellecttechcon_logo.gif" alt="Intellect Techcon Solutions" class="footer-logo">
+          <img src="assets/logo_intellecttechcon.jpg" alt="Intellect Techcon Solutions" class="footer-logo">
           <p class="footer-tagline">Technology and Content Provider</p>
         </div>
 
@@ -261,65 +257,88 @@
   <script src="three-effects.js"></script>
 
   <script>
-document.getElementById('demo-form')
-  .addEventListener('submit', async function (e) {
+    document.getElementById('demo-form')
+      .addEventListener('submit', async function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const form = e.target;
-    const btn = form.querySelector('button[type="submit"]');
-    const status = document.getElementById('demo-status');
-    const data = new FormData(form);
+        const form = e.target;
+        const btn = form.querySelector('button[type="submit"]');
+        const status = document.getElementById('demo-status');
+        const data = new FormData(form);
 
-    btn.textContent = 'Submitting...';
-    btn.disabled = true;
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
 
-    status.textContent = '';
-    status.className = 'form-status';
+        status.textContent = '';
+        status.className = 'form-status';
 
-    try {
+        try {
 
-      const response = await fetch(
-        'https://api.web3forms.com/submit',
-        {
-          method: 'POST',
-          body: data
+          const response = await fetch(
+            'https://api.web3forms.com/submit',
+            {
+              method: 'POST',
+              body: data
+            }
+          );
+
+          const result = await response.json();
+
+          if (result.success) {
+
+            form.reset();
+
+            status.textContent =
+              '✓ Demo request submitted successfully. Our team will contact you shortly.';
+
+            status.className =
+              'form-status form-status--success';
+
+          } else {
+
+            status.textContent =
+              'Unable to submit request. Please contact sales@intellecttechcon.com';
+
+            status.className =
+              'form-status form-status--error';
+          }
+
+        } catch {
+
+          status.textContent =
+            'Network error. Please contact sales@intellecttechcon.com';
+
+          status.className =
+            'form-status form-status--error';
         }
-      );
 
-      const result = await response.json();
+        btn.textContent = 'Schedule Demo';
+        btn.disabled = false;
 
-      if (result.success) {
+      });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-        form.reset();
+<script>
+  const solutionSelect = new Choices('#demo-solution', {
+    removeItemButton: true,
+    searchEnabled: true,
+    maxItemCount: 10,
+    placeholder: true,
+    placeholderValue: 'Select one or more solutions'
+  });
 
-        status.textContent =
-          '✓ Demo request submitted successfully. Our team will contact you shortly.';
+  document.getElementById('demo-form').addEventListener('submit', function(e) {
 
-        status.className =
-          'form-status form-status--success';
+    const selected =
+      solutionSelect.getValue(true);
 
-      } else {
-
-        status.textContent =
-          'Unable to submit request. Please contact sales@intellecttechcon.com';
-
-        status.className =
-          'form-status form-status--error';
-      }
-
-    } catch {
-
-      status.textContent =
-        'Network error. Please contact sales@intellecttechcon.com';
-
-      status.className =
-        'form-status form-status--error';
+    if (selected.length < 1) {
+      e.preventDefault();
+      alert('Please select at least one solution.');
+      return false;
     }
-
-    btn.textContent = 'Schedule Demo';
-    btn.disabled = false;
-
   });
 </script>
 </body>
