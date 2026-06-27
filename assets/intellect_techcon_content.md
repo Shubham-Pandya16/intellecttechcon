@@ -25,7 +25,7 @@ Intellect Techcon Solutions, using its years of experience, works with users to 
 ## CONTACT INFORMATION
 
 **Company:** Intellect Techcon Solutions
-**Address:** P.O. Box 88878, Dubai, United Arab Emirates
+**Address:** P.O. Box 6146, Dubai, United Arab Emirates
 **Phone:** +971 50 6930558
 **Email:** sales@intellecttechcon.com
 
